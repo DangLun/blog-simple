@@ -26,7 +26,7 @@ namespace Query.Application.UserCases.Tag
         public async Task<Result<PagedList<GetAllTagResponseDTO>>> Handle(GetAllTagQuery request, CancellationToken cancellationToken)
         {
             var tagRepo = _unitOfWork.Repository<Domain.Entities.Tag, int>();
-            IQueryable<Domain.Entities.Tag> query = tagRepo.AsQueryable();
+            IQueryable<Domain.Entities.Tag> query = tagRepo.FindAll();
 
             if (!string.IsNullOrWhiteSpace(request.SearchText))
             {

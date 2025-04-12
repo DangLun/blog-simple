@@ -35,9 +35,9 @@ namespace Query.Presentation.Controllers.v1
                 FilterOptions = new Contract.Options.FilterOptions
                 {
                     IncludeDeleted = request.IncludeDeleted ?? false,
-                    IncludeNoActived = false
+                    IncludeActived = false
                 },
-                IsRelationPostTag = request.IsRelationPostTag,
+                IsRelationPostTag = request.IsRelationPostTag ?? false,
             };
             var result = await mediator.Send(query);
             if (result.IsSuccess)
@@ -58,7 +58,7 @@ namespace Query.Presentation.Controllers.v1
                 FilterOptions = new Contract.Options.FilterOptions
                 {
                     IncludeDeleted = request.IncludeDeleted ?? false,
-                    IncludeNoActived = false
+                    IncludeActived = false
                 },
                 PaginationOptions = new Contract.Options.PaginationOptions
                 {

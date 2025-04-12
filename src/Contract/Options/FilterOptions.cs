@@ -2,7 +2,7 @@
 {
     public class FilterOptions
     {
-        public bool IncludeNoActived { get; set; }
+        public bool IncludeActived { get; set; }
         public bool IncludeDeleted { get; set; }
     }
 }

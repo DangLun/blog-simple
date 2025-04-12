@@ -7,7 +7,6 @@ using Query.Application.DTOs.Tag.Commons;
 using Query.Application.DTOs.Tag.OutputDTOs;
 using Query.Application.Query.Tag;
 using Query.Domain.Abstractions.Repositories;
-using Query.Domain.Entities;
 
 namespace Query.Application.UserCases.Tag
 {
@@ -31,7 +30,7 @@ namespace Query.Application.UserCases.Tag
             request.PaginationOptions.SortBy ??= "CreatedAt";
 
             var tagRepo = unitOfWork.Repository<Domain.Entities.Tag, int>();
-            var postRepo = unitOfWork.Repository<Post, int>();
+            var postRepo = unitOfWork.Repository<Domain.Entities.Post, int>();
             var tag = await tagRepo.FindByIdAsync((int)request.Id, false, cancellationToken, x => x.PostTags);
 
             if (tag is null)
@@ -92,7 +91,6 @@ namespace Query.Application.UserCases.Tag
                             Avatar = p.User.Avatar,
                             IsLoginWithGoogle = p.User.IsLoginWithGoogle
                         } : null,
-                        // Lấy các thẻ của bài viết thông qua join từ PostTag sang Tag
                         Tags = (
                             from pt in p.PostTags
                             join t in tags  // IQueryable<Tag> từ EF Core
