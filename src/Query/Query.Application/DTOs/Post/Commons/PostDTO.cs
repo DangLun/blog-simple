@@ -14,6 +14,7 @@
         public bool IsDeleted { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
+        public bool? IsSaved { get; set; }
         public UserDTO? Author { get; set; }
         public List<TagDTO>? Tags { get; set; }
     }

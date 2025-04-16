@@ -3,28 +3,44 @@
   "WorkspaceRootPath": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\query\\query.application\\usercases\\post\\getallpostqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|solutionrelative:src\\query\\query.application\\usercases\\post\\getallpostqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\command\\command.application\\usercases\\comment\\deletecommentcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|solutionrelative:src\\command\\command.application\\usercases\\comment\\deletecommentcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57B1BAAF-5FDF-4274-8EA9-CF01A07209A7}|src\\Query\\Query.Presentation\\Query.Presentation.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\query\\query.presentation\\controllers\\v1\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57B1BAAF-5FDF-4274-8EA9-CF01A07209A7}|src\\Query\\Query.Presentation\\Query.Presentation.csproj|solutionrelative:src\\query\\query.presentation\\controllers\\v1\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A8B7DA2-1116-4E92-8A15-DCFF1F4B67E7}|src\\Command\\Command.Presentation\\Command.Presentation.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\command\\command.presentation\\controllers\\v1\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A8B7DA2-1116-4E92-8A15-DCFF1F4B67E7}|src\\Command\\Command.Presentation\\Command.Presentation.csproj|solutionrelative:src\\command\\command.presentation\\controllers\\v1\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{008F5F3C-CCDB-4EFB-8A00-CE7544D12B14}|src\\Query\\Query.Domain\\Query.Domain.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\query\\query.domain\\entities\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{008F5F3C-CCDB-4EFB-8A00-CE7544D12B14}|src\\Query\\Query.Domain\\Query.Domain.csproj|solutionrelative:src\\query\\query.domain\\entities\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A8B7DA2-1116-4E92-8A15-DCFF1F4B67E7}|src\\Command\\Command.Presentation\\Command.Presentation.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\command\\command.presentation\\controllers\\v1\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A8B7DA2-1116-4E92-8A15-DCFF1F4B67E7}|src\\Command\\Command.Presentation\\Command.Presentation.csproj|solutionrelative:src\\command\\command.presentation\\controllers\\v1\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\query\\query.application\\usercases\\tag\\getdetailtagqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|solutionrelative:src\\query\\query.application\\usercases\\tag\\getdetailtagqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\command\\command.application\\commands\\comment\\deletecommentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|solutionrelative:src\\command\\command.application\\commands\\comment\\deletecommentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\query\\query.application\\query\\post\\getallpostquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|solutionrelative:src\\query\\query.application\\query\\post\\getallpostquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\command\\command.application\\usercases\\comment\\createcommentcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|solutionrelative:src\\command\\command.application\\usercases\\comment\\createcommentcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\query\\query.application\\dtos\\tag\\inputdtos\\getalltagdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|solutionrelative:src\\query\\query.application\\dtos\\tag\\inputdtos\\getalltagdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\command\\command.application\\usercases\\post\\createfollowcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|solutionrelative:src\\command\\command.application\\usercases\\post\\createfollowcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\command\\command.application\\commands\\post\\createfollowcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|solutionrelative:src\\command\\command.application\\commands\\post\\createfollowcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\command\\command.application\\commands\\post\\createreactioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|solutionrelative:src\\command\\command.application\\commands\\post\\createreactioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\query\\query.application\\dtos\\post\\commons\\postdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|solutionrelative:src\\query\\query.application\\dtos\\post\\commons\\postdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\query\\query.application\\dtos\\post\\outputdto\\getdetailpostresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|solutionrelative:src\\query\\query.application\\dtos\\post\\outputdto\\getdetailpostresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,81 +90,131 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Post.cs",
-              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Domain\\Entities\\Post.cs",
-              "RelativeDocumentMoniker": "src\\Query\\Query.Domain\\Entities\\Post.cs",
-              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Domain\\Entities\\Post.cs",
-              "RelativeToolTip": "src\\Query\\Query.Domain\\Entities\\Post.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAiAAAA",
+              "DocumentIndex": 5,
+              "Title": "CreateFollowCommandHandler.cs",
+              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\UserCases\\Post\\CreateFollowCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\Command\\Command.Application\\UserCases\\Post\\CreateFollowCommandHandler.cs",
+              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\UserCases\\Post\\CreateFollowCommandHandler.cs",
+              "RelativeToolTip": "src\\Command\\Command.Application\\UserCases\\Post\\CreateFollowCommandHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T08:25:49.06Z",
+              "WhenOpened": "2025-04-16T13:19:47.071Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GetAllPostQueryHandler.cs",
-              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\UserCases\\Post\\GetAllPostQueryHandler.cs",
-              "RelativeDocumentMoniker": "src\\Query\\Query.Application\\UserCases\\Post\\GetAllPostQueryHandler.cs",
-              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\UserCases\\Post\\GetAllPostQueryHandler.cs",
-              "RelativeToolTip": "src\\Query\\Query.Application\\UserCases\\Post\\GetAllPostQueryHandler.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAA4wHAAAAAPAAAA",
+              "DocumentIndex": 2,
+              "Title": "PostController.cs",
+              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Presentation\\Controllers\\v1\\PostController.cs",
+              "RelativeDocumentMoniker": "src\\Command\\Command.Presentation\\Controllers\\v1\\PostController.cs",
+              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Presentation\\Controllers\\v1\\PostController.cs",
+              "RelativeToolTip": "src\\Command\\Command.Presentation\\Controllers\\v1\\PostController.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAYwE8AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T08:20:33.782Z",
+              "WhenOpened": "2025-04-16T12:16:45.591Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PostController.cs",
-              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Presentation\\Controllers\\v1\\PostController.cs",
-              "RelativeDocumentMoniker": "src\\Query\\Query.Presentation\\Controllers\\v1\\PostController.cs",
-              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Presentation\\Controllers\\v1\\PostController.cs",
-              "RelativeToolTip": "src\\Query\\Query.Presentation\\Controllers\\v1\\PostController.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAYwCYAAABFAAAA",
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Presentation\\Controllers\\v1\\CommentController.cs",
+              "RelativeDocumentMoniker": "src\\Command\\Command.Presentation\\Controllers\\v1\\CommentController.cs",
+              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Presentation\\Controllers\\v1\\CommentController.cs",
+              "RelativeToolTip": "src\\Command\\Command.Presentation\\Controllers\\v1\\CommentController.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAYwDoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T08:17:51.747Z",
+              "WhenOpened": "2025-04-16T14:48:18.039Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GetAllTagDTO.cs",
-              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\DTOs\\Tag\\InputDTOs\\GetAllTagDTO.cs",
-              "RelativeDocumentMoniker": "src\\Query\\Query.Application\\DTOs\\Tag\\InputDTOs\\GetAllTagDTO.cs",
-              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\DTOs\\Tag\\InputDTOs\\GetAllTagDTO.cs",
-              "RelativeToolTip": "src\\Query\\Query.Application\\DTOs\\Tag\\InputDTOs\\GetAllTagDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "DocumentIndex": 0,
+              "Title": "DeleteCommentCommandHandler.cs",
+              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\UserCases\\Comment\\DeleteCommentCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\Command\\Command.Application\\UserCases\\Comment\\DeleteCommentCommandHandler.cs",
+              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\UserCases\\Comment\\DeleteCommentCommandHandler.cs",
+              "RelativeToolTip": "src\\Command\\Command.Application\\UserCases\\Comment\\DeleteCommentCommandHandler.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAA4wAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T08:12:31.406Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GetAllPostQuery.cs",
-              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\Query\\Post\\GetAllPostQuery.cs",
-              "RelativeDocumentMoniker": "src\\Query\\Query.Application\\Query\\Post\\GetAllPostQuery.cs",
-              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\Query\\Post\\GetAllPostQuery.cs",
-              "RelativeToolTip": "src\\Query\\Query.Application\\Query\\Post\\GetAllPostQuery.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T08:07:00.876Z",
+              "WhenOpened": "2025-04-16T14:57:30.531Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GetDetailTagQueryHandler.cs",
-              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\UserCases\\Tag\\GetDetailTagQueryHandler.cs",
-              "RelativeDocumentMoniker": "src\\Query\\Query.Application\\UserCases\\Tag\\GetDetailTagQueryHandler.cs",
-              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\UserCases\\Tag\\GetDetailTagQueryHandler.cs",
-              "RelativeToolTip": "src\\Query\\Query.Application\\UserCases\\Tag\\GetDetailTagQueryHandler.cs",
-              "ViewState": "AQIAAFcAAAAAAAAAAAAiwF0AAAAYAAAA",
+              "Title": "DeleteCommentCommand.cs",
+              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\Commands\\Comment\\DeleteCommentCommand.cs",
+              "RelativeDocumentMoniker": "src\\Command\\Command.Application\\Commands\\Comment\\DeleteCommentCommand.cs",
+              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\Commands\\Comment\\DeleteCommentCommand.cs",
+              "RelativeToolTip": "src\\Command\\Command.Application\\Commands\\Comment\\DeleteCommentCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T08:40:29.331Z",
+              "WhenOpened": "2025-04-16T14:57:03.824Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateCommentCommandHandler.cs",
+              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\UserCases\\Comment\\CreateCommentCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\Command\\Command.Application\\UserCases\\Comment\\CreateCommentCommandHandler.cs",
+              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\UserCases\\Comment\\CreateCommentCommandHandler.cs",
+              "RelativeToolTip": "src\\Command\\Command.Application\\UserCases\\Comment\\CreateCommentCommandHandler.cs",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAiwFcAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T13:44:57.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateReactionCommand.cs",
+              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\Commands\\Post\\CreateReactionCommand.cs",
+              "RelativeDocumentMoniker": "src\\Command\\Command.Application\\Commands\\Post\\CreateReactionCommand.cs",
+              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\Commands\\Post\\CreateReactionCommand.cs",
+              "RelativeToolTip": "src\\Command\\Command.Application\\Commands\\Post\\CreateReactionCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T12:05:29.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreateFollowCommand.cs",
+              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\Commands\\Post\\CreateFollowCommand.cs",
+              "RelativeDocumentMoniker": "src\\Command\\Command.Application\\Commands\\Post\\CreateFollowCommand.cs",
+              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\Commands\\Post\\CreateFollowCommand.cs",
+              "RelativeToolTip": "src\\Command\\Command.Application\\Commands\\Post\\CreateFollowCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T13:18:54.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PostDetailDTO.cs",
+              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\DTOs\\Post\\Commons\\PostDetailDTO.cs",
+              "RelativeDocumentMoniker": "src\\Query\\Query.Application\\DTOs\\Post\\Commons\\PostDetailDTO.cs",
+              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\DTOs\\Post\\Commons\\PostDetailDTO.cs",
+              "RelativeToolTip": "src\\Query\\Query.Application\\DTOs\\Post\\Commons\\PostDetailDTO.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAABEwB4AAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T11:00:02.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GetDetailPostResponseDTO.cs",
+              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\DTOs\\Post\\OutputDTO\\GetDetailPostResponseDTO.cs",
+              "RelativeDocumentMoniker": "src\\Query\\Query.Application\\DTOs\\Post\\OutputDTO\\GetDetailPostResponseDTO.cs",
+              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\DTOs\\Post\\OutputDTO\\GetDetailPostResponseDTO.cs",
+              "RelativeToolTip": "src\\Query\\Query.Application\\DTOs\\Post\\OutputDTO\\GetDetailPostResponseDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T11:00:00.214Z"
             }
           ]
         },

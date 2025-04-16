@@ -101,7 +101,7 @@ namespace Command.Persistence.Migrations
                         {
                             Id = 1,
                             CommentText = "content-1",
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 627, DateTimeKind.Utc).AddTicks(6931),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 503, DateTimeKind.Utc).AddTicks(4966),
                             IsDeleted = false,
                             ParentCommentId = 0,
                             PostId = 1,
@@ -111,7 +111,7 @@ namespace Command.Persistence.Migrations
                         {
                             Id = 2,
                             CommentText = "content-2",
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 627, DateTimeKind.Utc).AddTicks(6940),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 503, DateTimeKind.Utc).AddTicks(4975),
                             IsDeleted = false,
                             ParentCommentId = 0,
                             PostId = 2,
@@ -121,7 +121,7 @@ namespace Command.Persistence.Migrations
                         {
                             Id = 3,
                             CommentText = "content-3",
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 627, DateTimeKind.Utc).AddTicks(6941),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 503, DateTimeKind.Utc).AddTicks(4977),
                             IsDeleted = false,
                             ParentCommentId = 0,
                             PostId = 2,
@@ -131,7 +131,7 @@ namespace Command.Persistence.Migrations
                         {
                             Id = 4,
                             CommentText = "content-4",
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 627, DateTimeKind.Utc).AddTicks(6942),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 503, DateTimeKind.Utc).AddTicks(4978),
                             IsDeleted = false,
                             ParentCommentId = 0,
                             PostId = 1,
@@ -205,14 +205,14 @@ namespace Command.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            FollowedAt = new DateTime(2025, 4, 10, 12, 13, 29, 631, DateTimeKind.Utc).AddTicks(3071),
+                            FollowedAt = new DateTime(2025, 4, 14, 7, 28, 29, 507, DateTimeKind.Utc).AddTicks(3147),
                             FollowedId = 2,
                             FollowerId = 1
                         },
                         new
                         {
                             Id = 2,
-                            FollowedAt = new DateTime(2025, 4, 10, 12, 13, 29, 631, DateTimeKind.Utc).AddTicks(3081),
+                            FollowedAt = new DateTime(2025, 4, 14, 7, 28, 29, 507, DateTimeKind.Utc).AddTicks(3151),
                             FollowedId = 1,
                             FollowerId = 2
                         });
@@ -279,7 +279,7 @@ namespace Command.Persistence.Migrations
                         {
                             Id = 1,
                             CommentId = 1,
-                            NotificationAt = new DateTime(2025, 4, 10, 19, 13, 29, 637, DateTimeKind.Local).AddTicks(2479),
+                            NotificationAt = new DateTime(2025, 4, 14, 14, 28, 29, 513, DateTimeKind.Local).AddTicks(7902),
                             PostId = 1,
                             RecipientUserId = 1,
                             Seen = false,
@@ -289,7 +289,7 @@ namespace Command.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            NotificationAt = new DateTime(2025, 4, 10, 19, 13, 29, 637, DateTimeKind.Local).AddTicks(2515),
+                            NotificationAt = new DateTime(2025, 4, 14, 14, 28, 29, 513, DateTimeKind.Local).AddTicks(7921),
                             RecipientUserId = 2,
                             Seen = false,
                             Type = "Follow",
@@ -298,7 +298,7 @@ namespace Command.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            NotificationAt = new DateTime(2025, 4, 10, 19, 13, 29, 637, DateTimeKind.Local).AddTicks(2517),
+                            NotificationAt = new DateTime(2025, 4, 14, 14, 28, 29, 513, DateTimeKind.Local).AddTicks(7923),
                             PostId = 2,
                             RecipientUserId = 1,
                             Seen = false,
@@ -452,7 +452,7 @@ namespace Command.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 639, DateTimeKind.Utc).AddTicks(2598),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 515, DateTimeKind.Utc).AddTicks(2576),
                             IsActived = false,
                             PostId = 1,
                             ReactionId = 1,
@@ -461,7 +461,7 @@ namespace Command.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 639, DateTimeKind.Utc).AddTicks(2602),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 515, DateTimeKind.Utc).AddTicks(2579),
                             IsActived = false,
                             PostId = 2,
                             ReactionId = 4,
@@ -477,6 +477,9 @@ namespace Command.Persistence.Migrations
                         .HasColumnName("post_saved_id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsActived")
+                        .HasColumnType("bit");
 
                     b.Property<int>("PostId")
                         .HasColumnType("int")
@@ -498,18 +501,21 @@ namespace Command.Persistence.Migrations
                         new
                         {
                             Id = 1,
+                            IsActived = false,
                             PostId = 1,
                             UserId = 1
                         },
                         new
                         {
                             Id = 2,
+                            IsActived = false,
                             PostId = 2,
                             UserId = 1
                         },
                         new
                         {
                             Id = 3,
+                            IsActived = false,
                             PostId = 1,
                             UserId = 2
                         });
@@ -617,7 +623,7 @@ namespace Command.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 640, DateTimeKind.Utc).AddTicks(7890),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 516, DateTimeKind.Utc).AddTicks(7589),
                             IsDeleted = false,
                             ReactionDescription = "reaction-description-1",
                             ReactionIcon = "icon-1.png",
@@ -626,7 +632,7 @@ namespace Command.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 640, DateTimeKind.Utc).AddTicks(7896),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 516, DateTimeKind.Utc).AddTicks(7594),
                             IsDeleted = false,
                             ReactionDescription = "reaction-description-2",
                             ReactionIcon = "icon-2.png",
@@ -635,7 +641,7 @@ namespace Command.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 640, DateTimeKind.Utc).AddTicks(7898),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 516, DateTimeKind.Utc).AddTicks(7595),
                             IsDeleted = false,
                             ReactionDescription = "reaction-description-3",
                             ReactionIcon = "icon-3.png",
@@ -644,7 +650,7 @@ namespace Command.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 640, DateTimeKind.Utc).AddTicks(7899),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 516, DateTimeKind.Utc).AddTicks(7596),
                             IsDeleted = false,
                             ReactionDescription = "reaction-description-4",
                             ReactionIcon = "icon-4.png",
@@ -761,14 +767,14 @@ namespace Command.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 641, DateTimeKind.Utc).AddTicks(5780),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 517, DateTimeKind.Utc).AddTicks(5245),
                             IsDeleted = false,
                             TagName = "tag-name-test-1"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 641, DateTimeKind.Utc).AddTicks(5786),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 517, DateTimeKind.Utc).AddTicks(5252),
                             IsDeleted = false,
                             TagName = "tag-name-test-2"
                         });
@@ -849,14 +855,14 @@ namespace Command.Persistence.Migrations
                             Id = 1,
                             Avatar = "default-avatar.png",
                             Bio = "bio-admin",
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 642, DateTimeKind.Utc).AddTicks(2462),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 517, DateTimeKind.Utc).AddTicks(9335),
                             Email = "admin@gmail.com",
                             FullName = "admin",
                             IsActived = true,
                             IsDeleted = false,
                             IsEmailVerified = true,
                             IsLoginWithGoogle = false,
-                            PasswordHash = "$2a$11$xVOeErb.QaWUx00npUBX9eYyZgvgdpNoUVzzENfVFe1DLq3gZeibK",
+                            PasswordHash = "$2a$11$4ViFbFey8KEm.rqv5gwM9.wS0jbnEkU1oy9VIdn8K6sVDFfkY8eI6",
                             RoleId = 1
                         },
                         new
@@ -864,14 +870,14 @@ namespace Command.Persistence.Migrations
                             Id = 2,
                             Avatar = "default-avatar.png",
                             Bio = "bio-user",
-                            CreatedAt = new DateTime(2025, 4, 10, 12, 13, 29, 764, DateTimeKind.Utc).AddTicks(8838),
+                            CreatedAt = new DateTime(2025, 4, 14, 7, 28, 29, 639, DateTimeKind.Utc).AddTicks(5603),
                             Email = "user@gmail.com",
                             FullName = "user",
                             IsActived = true,
                             IsDeleted = false,
                             IsEmailVerified = true,
                             IsLoginWithGoogle = false,
-                            PasswordHash = "$2a$11$0sHFqyUE64rVciMvqIkOK.ixuFAdMEeueUQsfN4Y/z8tVZ8OdSTv2",
+                            PasswordHash = "$2a$11$2p0349noPq3CXSZjGtT0HeT238MalPN0WgVVBbGqdWw6QLReDMA3e",
                             RoleId = 2
                         });
                 });

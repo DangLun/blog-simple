@@ -51,7 +51,7 @@ namespace Query.Application.UserCases.Tag
             }
 
             var tags = tagRepo.FindAll();
-            var posts = postRepo.FindAll(false, null, x => x.PostTags, x => x.User);
+            var posts = postRepo.FindAll(false, null, x => x.PostTags, x => x.User, x=> x.SavedByUsers);
 
             var response = new GetDetailTagResponseDTO
             {
@@ -83,6 +83,8 @@ namespace Query.Application.UserCases.Tag
                         TotalReactions = p.TotalReactions,
                         TotalReads = p.TotalReads,
                         UpdatedAt = p.UpdatedAt,
+                        IsSaved = p.SavedByUsers.Any(su => su.UserId == request.UserIdCall) ?
+                           p.SavedByUsers.First(pt => pt.UserId == request.UserIdCall).IsActived : false,
                         Author = p.User != null ? new UserDTO
                         {
                             Id = p.User.Id,

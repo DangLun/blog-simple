@@ -29,5 +29,56 @@ namespace Command.Presentation.Controllers.v1
             }
             return BadRequest(result.Error);
         }
+
+        [HttpPost("increase-read")]
+        [MapToApiVersion(1)]
+        public async Task<IActionResult> IncreaseRead([FromBody] IncreaseReadCommand request)
+        {
+            var result = await mediator.Send(request);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Error);
+        }
+
+        [HttpPost("saved-post")]
+        [MapToApiVersion(1)]
+        [Authorize]
+        public async Task<IActionResult> SavedPost([FromBody] CreatePostSaveCommand request)
+        {
+            var result = await mediator.Send(request);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Error);
+        }
+
+        [HttpPost("reaction")]
+        [MapToApiVersion(1)]
+        [Authorize]
+        public async Task<IActionResult> CreateReactionPost([FromBody] CreateReactionCommand request)
+        {
+            var result = await mediator.Send(request);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Error);
+        }
+
+        [HttpPost("follow")]
+        [MapToApiVersion(1)]
+        [Authorize]
+        public async Task<IActionResult> Follow([FromBody] CreateFollowCommand request)
+        {
+            var result = await mediator.Send(request);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Error);
+        }
     }
 }

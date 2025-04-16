@@ -12,5 +12,7 @@
         public bool? IsRelationTag { get; set; }
         public int? UserIdCall { get; set; }
         public string? FollowOrRecent { get; set; }
+        public DateTime? CurrentDate { get; set; }
+        public int? SortStatus { get; set; } // 0: tuần, 1: tháng, 2 năm, null: tất cả
     }
 }

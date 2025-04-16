@@ -30,10 +30,10 @@ namespace Query.Application.UserCases.Post
             var postRepo = unitOfWork.Repository<Domain.Entities.Post, int>();
             var follow = unitOfWork.Repository<Follow, int>();
             var user = unitOfWork.Repository<User, int>();
-            var tag = unitOfWork.Repository<Domain.Entities.Tag, int>();
+            var tag = unitOfWork.Repository<Domain.Entities.Tag, int>();   
             request.PaginationOptions.SortBy ??= "CreatedAt";
 
-            var posts = postRepo.FindAll(false, null, x => x.PostTags, x=> x.User);
+            var posts = postRepo.FindAll(false, null, x => x.PostTags, x=> x.User, x=> x.SavedByUsers);
             var follows = follow.FindAll();
             var users = user.FindAll();
             var tags = tag.FindAll();
@@ -45,7 +45,7 @@ namespace Query.Application.UserCases.Post
             }
 
             if (request.FollowOrRecent != null && 
-                request.FollowOrRecent.Equals("follow") && request.UserIdCall != null)
+                request.FollowOrRecent.Equals("follow"))
             {
                 posts = (from p in posts
                          join u in users on p.UserId equals u.Id
@@ -69,6 +69,21 @@ namespace Query.Application.UserCases.Post
                 posts = posts.Where(x => !x.IsPublished);
             }
 
+            if (request.SortStatus != null && request.CurrentDate != null)
+            {
+                int diff = (7 + (request.CurrentDate.Value.DayOfWeek - DayOfWeek.Monday)) % 7;
+                DateTime startOfWeek = request.CurrentDate.Value.AddDays(-diff);
+                DateTime endOfWeek = startOfWeek.AddDays(6);
+                posts = request.SortStatus switch
+                {
+                    0 => posts.Where(x => x.CreatedAt >= startOfWeek && x.CreatedAt <= endOfWeek),
+                    1 => posts.Where(x => x.CreatedAt.Value.Month == request.CurrentDate.Value.Month
+                                && x.CreatedAt.Value.Year == request.CurrentDate.Value.Year),
+                    2 => posts.Where(x => x.CreatedAt.Value.Year == request.CurrentDate.Value.Year),
+                    _ => posts
+                };
+            }
+
             var responseQueryable = posts.Sort(request.PaginationOptions.SortBy, request.PaginationOptions.IsDescending)
                 .Select(x => new PostDTO
                 {
@@ -84,15 +99,17 @@ namespace Query.Application.UserCases.Post
                     TotalReactions = x.TotalReactions,
                     TotalReads = x.TotalReads,
                     UpdatedAt = x.UpdatedAt,
+                    IsSaved = x.SavedByUsers.Any(su => su.UserId == request.UserIdCall) ? 
+                            x.SavedByUsers.First(pt => pt.UserId == request.UserIdCall).IsActived : false,
                     Author = new UserDTO
                     {
                         Id = x.User.Id,
                         Avatar = x.User.Avatar,
-                        Email = x.User.Email,   
+                        Email = x.User.Email,
                         FullName = x.User.FullName,
-                        IsLoginWithGoogle = x.User.IsLoginWithGoogle   
+                        IsLoginWithGoogle = x.User.IsLoginWithGoogle
                     },
-                    Tags = tags.Where(t => t.PostTags.Any(pt => pt.TagId == t.Id) && !t.IsDeleted).Select(x => new TagDTO
+                    Tags = (request.IsRelationTag != null && (bool)request.IsRelationTag) ? tags.Where(t => t.PostTags.Any(p => p.PostId == x.Id) && !t.IsDeleted).Select(x => new TagDTO
                     {
                         Id = x.Id,
                         ClassName = x.ClassName,
@@ -101,7 +118,7 @@ namespace Query.Application.UserCases.Post
                         IsDeleted = x.IsDeleted,
                         TagName = x.TagName,
                         UpdatedAt = x.UpdatedAt,
-                    }).ToList()
+                    }).ToList() : null
                 });
 
             var responsePagedList = await PagedList<PostDTO>

@@ -11,5 +11,6 @@ namespace Query.Application.Query.Tag
         public bool? IsRelationPost { get; set; }
         public FilterOptions? FilterOptions { get; set; }
         public PaginationOptions? PaginationOptions { get; set; }
+        public int? UserIdCall { get; set; }
     }
 }

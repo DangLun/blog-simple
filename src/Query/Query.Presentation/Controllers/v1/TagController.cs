@@ -30,7 +30,7 @@ namespace Query.Presentation.Controllers.v1
                     Page = request.Page,
                     PageSize = request.PageSize,
                     SortBy = request.SortBy,
-                    IsDescending = request.IsDescending
+                    IsDescending = request.IsDescending ?? true
                 },
                 FilterOptions = new Contract.Options.FilterOptions
                 {
@@ -67,7 +67,8 @@ namespace Query.Presentation.Controllers.v1
                     SortBy = request.SortBy,
                     IsDescending = request.IsDescending ?? true
                 },
-                IsRelationPost = request.IsRelationPost ?? false
+                IsRelationPost = request.IsRelationPost ?? false,
+                UserIdCall = request.UserIdCall 
             };
             var result = await mediator.Send(query);
             if (result.IsSuccess)

@@ -2,9 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Query.Application.DTOs.Post.InputDTO;
-using Query.Application.DTOs.Tag.InputDTOs;
 using Query.Application.Query.Post;
-using Query.Application.Query.Tag;
 using Query.Presentation.Abstractions;
 
 namespace Query.Presentation.Controllers.v1
@@ -32,7 +30,7 @@ namespace Query.Presentation.Controllers.v1
                     Page = request.Page,
                     PageSize = request.PageSize,
                     SortBy = request.SortBy,
-                    IsDescending = request.IsDescending
+                    IsDescending = request.IsDescending ?? true
                 },
                 FilterOptions = new Contract.Options.FilterOptions
                 {
@@ -41,7 +39,50 @@ namespace Query.Presentation.Controllers.v1
                 },
                 IsRelationTag = request.IsRelationTag ?? false,
                 FollowOrRecent = request.FollowOrRecent ?? "recent",
-                UserIdCall = request.UserIdCall ?? null
+                UserIdCall = request.UserIdCall ?? null,
+                CurrentDate = request.CurrentDate,
+                SortStatus = request.SortStatus < 0 ? null : request.SortStatus,
+            };
+            var result = await mediator.Send(query);
+            if (result.IsSuccess)
+            {
+                return Ok(result.Value);
+            }
+
+            return BadRequest(result.Error);
+        }
+
+        [MapToApiVersion(1)]
+        [HttpGet("get-all-trending")]
+        public async Task<IActionResult> GetAllTrendingV1([FromQuery] GetAllPostTrendingRequestDTO request)
+        {
+            var query = new GetAllPostTrendingQuery
+            {
+                FilterOptions = new Contract.Options.FilterOptions
+                {
+                    IncludeDeleted = request.IncludeDeleted ?? false,
+                    IncludeActived = request.IsPublic ?? true
+                },
+                IsRelationTag = request.IsRelationTag ?? false,
+                SkipTakeOptions = new Contract.Options.SkipTakeOptions(request.Skip, request.Take),
+                UserIdCall = request.UserIdCall
+            };
+            var result = await mediator.Send(query);
+            if (result.IsSuccess)
+            {
+                return Ok(result.Value);
+            }
+
+            return BadRequest(result.Error);
+        }
+        [MapToApiVersion(1)]
+        [HttpGet("get-detail")]
+        public async Task<IActionResult> GetDetailV1([FromQuery] GetDetailPostRequestDTO request)
+        {
+            var query = new GetDetailPostQuery
+            {
+                PostId = request.PostId,
+                UserIdCall = request.UserIdCall
             };
             var result = await mediator.Send(query);
             if (result.IsSuccess)

@@ -37,6 +37,8 @@ namespace Command.Application.UserCases.Post
                 var postRepo = unitOfWork.Repository<Domain.Entities.Post, int>();
                 var tagRepo = unitOfWork.Repository<Tag, int>();
                 var postTextRepo = unitOfWork.Repository<PostText, int>();
+                var followRepo = unitOfWork.Repository<Follow, int>();
+                var notificationRepo = unitOfWork.Repository<Notification, int>();  
 
                 var postText = new PostText
                 {
@@ -79,6 +81,27 @@ namespace Command.Application.UserCases.Post
                     }
                     await postRepo.SaveChangesAsync(cancellationToken);
                 }
+
+                // notification
+                // get all RecipientUserId
+                var recipientUserIds = followRepo.FindAll(false, x => x.FollowedId == request.UserId)
+                    .Select(x => x.FollowerId);
+
+                foreach(var recipientId in recipientUserIds)
+                {
+                    var notification = new Notification
+                    {
+                        Type = "Follow",
+                        NotificationAt = DateTime.Now,
+                        Seen = false,
+                        UserId = request.UserId,
+                        RecipientUserId = recipientId,
+                    };
+
+                    notificationRepo.Add(notification);
+                }
+
+                await notificationRepo.SaveChangesAsync(cancellationToken);
 
                 transaction.Commit();
 
