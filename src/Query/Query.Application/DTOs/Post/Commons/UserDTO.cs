@@ -7,5 +7,6 @@
         public string Email { get; set; }
         public string? Avatar { get; set; }
         public bool IsLoginWithGoogle { get; set; }
+        public DateTime? CreatedAt { get; set; }
     }
 }

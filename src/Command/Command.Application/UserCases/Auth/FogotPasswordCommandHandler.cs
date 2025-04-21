@@ -40,7 +40,7 @@ namespace Command.Application.UserCases.Auth
                 }
 
                 var user = await _userRepository.FirstOrDefaultAsync(true, x => x.Id == emailToken.UserId
-                            && !x.IsDeleted && x.IsActived, cancellationToken);
+                           && x.IsActived, cancellationToken);
                 
                 if(user is null)
                 {

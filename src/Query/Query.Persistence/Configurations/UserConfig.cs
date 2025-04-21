@@ -23,7 +23,6 @@ namespace Query.Persistence.Configurations
             builder.Property(x => x.IsLoginWithGoogle).HasColumnName("is_login_google");
             builder.Property(x => x.CreatedAt).HasColumnName("created_at");
             builder.Property(x => x.UpdatedAt).HasColumnName("updated_at");
-            builder.Property(x => x.IsDeleted).HasColumnName("is_deleted");
             builder.Property(x => x.IsActived).HasColumnName("is_actived");
             builder.Property(x => x.IsEmailVerified).HasColumnName("is_email_verified");
 
@@ -43,7 +42,6 @@ namespace Query.Persistence.Configurations
                     Avatar = "default-avatar.png",
                     //PasswordHash = _passwordHasher.HashPassword("admin"),
                     PasswordHash = PasswordExtensions.HashPassword("admin"),
-                    IsDeleted = false,
                     RoleId = 1,
                     IsActived = true,
                     IsEmailVerified = true,
@@ -60,7 +58,6 @@ namespace Query.Persistence.Configurations
                     Avatar = "default-avatar.png",
                     //PasswordHash = _passwordHasher.HashPassword("user"),
                     PasswordHash = PasswordExtensions.HashPassword("user"),
-                    IsDeleted = false,
                     RoleId = 2,
                     IsActived = true,
                     IsEmailVerified = true,

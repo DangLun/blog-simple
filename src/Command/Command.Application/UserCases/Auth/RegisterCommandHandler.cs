@@ -52,7 +52,6 @@ namespace Command.Application.UserCases.Auth
                     Bio = string.Empty,
                     Email = request.Email,
                     FullName = request.FullName,
-                    IsDeleted = UserConst.DEFAULT_DELETED,
                     IsLoginWithGoogle = UserConst.DEFAULT_LOGIN_GOOGLE,
                     RoleId = userRole!.Id,
                     PasswordHash = PasswordExtensions.HashPassword(request.Password),

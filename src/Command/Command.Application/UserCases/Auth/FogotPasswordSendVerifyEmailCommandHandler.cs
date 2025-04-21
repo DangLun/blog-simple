@@ -33,7 +33,7 @@ namespace Command.Application.UserCases.Auth
                 var emailTokenRepository = _unitOfWork.Repository<EmailToken, int>();
 
                 var user = await _userRepository.FirstOrDefaultAsync(true, x => x.Email.Equals(request.Email)
-                            && !x.IsDeleted && x.IsActived, cancellationToken);
+                            && x.IsActived, cancellationToken);
                 
                 if(user is null)
                 {

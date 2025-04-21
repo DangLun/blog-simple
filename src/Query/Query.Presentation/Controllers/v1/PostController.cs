@@ -92,5 +92,30 @@ namespace Query.Presentation.Controllers.v1
 
             return BadRequest(result.Error);
         }
+        [MapToApiVersion(1)]
+        [HttpGet("get-all-by-user-id")]
+        public async Task<IActionResult> GetAllPostByUserIdV1([FromQuery] GetAllPostByUserIdRequestDTO request)
+        {
+            var query = new GetAllPostByUserIdQuery
+            {
+                FilterOptions = new Contract.Options.FilterOptions
+                {
+                    IncludeDeleted = request.IncludeDeleted ?? false,
+                    IncludeActived = request.IsPublic ?? true
+                },
+                PaginationOptions = new Contract.Options.PaginationOptions(request.SortBy, request.IsDescending,
+                request.Page, request.PageSize),
+                IsRelationTag = request.IsRelationTag ?? false,
+                UserIdCall = request.UserIdCall,
+                UserId = request.UserId,
+            };
+            var result = await mediator.Send(query);
+            if (result.IsSuccess)
+            {
+                return Ok(result.Value);
+            }
+
+            return BadRequest(result.Error);
+        }
     }
 }

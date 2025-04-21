@@ -10,5 +10,7 @@ namespace Command.Application.Commands.Comment
         public int? PostId { get; set; }
         public int? ParentCommentId { get; set; }
         public int? UserId { get; set; }
+        public bool? IsReplay { get; set; }
+        public int? UserIdComment { get; set; }
     }
 }

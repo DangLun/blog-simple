@@ -29,7 +29,7 @@ namespace Query.Application.UserCases.Post
         {
             var postRepo = unitOfWork.Repository<Domain.Entities.Post, int>();
             var follow = unitOfWork.Repository<Follow, int>();
-            var user = unitOfWork.Repository<User, int>();
+            var user = unitOfWork.Repository<Domain.Entities.User, int>();
             var tag = unitOfWork.Repository<Domain.Entities.Tag, int>();   
             request.PaginationOptions.SortBy ??= "CreatedAt";
 
@@ -99,15 +99,16 @@ namespace Query.Application.UserCases.Post
                     TotalReactions = x.TotalReactions,
                     TotalReads = x.TotalReads,
                     UpdatedAt = x.UpdatedAt,
-                    IsSaved = x.SavedByUsers.Any(su => su.UserId == request.UserIdCall) ? 
-                            x.SavedByUsers.First(pt => pt.UserId == request.UserIdCall).IsActived : false,
+                    IsSaved = x.SavedByUsers != null ? x.SavedByUsers.Any(su => su.UserId == request.UserIdCall) ? 
+                            x.SavedByUsers.First(pt => pt.UserId == request.UserIdCall).IsActived : false : false,
                     Author = new UserDTO
                     {
                         Id = x.User.Id,
                         Avatar = x.User.Avatar,
                         Email = x.User.Email,
                         FullName = x.User.FullName,
-                        IsLoginWithGoogle = x.User.IsLoginWithGoogle
+                        IsLoginWithGoogle = x.User.IsLoginWithGoogle,
+                        CreatedAt = x.User.CreatedAt
                     },
                     Tags = (request.IsRelationTag != null && (bool)request.IsRelationTag) ? tags.Where(t => t.PostTags.Any(p => p.PostId == x.Id) && !t.IsDeleted).Select(x => new TagDTO
                     {

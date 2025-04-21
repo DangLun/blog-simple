@@ -32,7 +32,7 @@ namespace Query.Application.UserCases.Post
             var postReactionRepo = unitOfWork.Repository<PostReaction, int>();
             var followRepo = unitOfWork.Repository<Follow, int>();
             var tagRepo = unitOfWork.Repository<Domain.Entities.Tag, int>();
-            var userRepo = unitOfWork.Repository<User, int>();
+            var userRepo = unitOfWork.Repository<Domain.Entities.User, int>();
             var reactionRepo = unitOfWork.Repository<Reaction, int>();
 
 

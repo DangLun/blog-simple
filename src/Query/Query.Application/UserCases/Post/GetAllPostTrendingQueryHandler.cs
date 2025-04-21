@@ -72,7 +72,8 @@ namespace Query.Application.UserCases.Post
                     Avatar = x.User.Avatar,
                     Email = x.User.Email,
                     FullName = x.User.FullName,
-                    IsLoginWithGoogle = x.User.IsLoginWithGoogle
+                    IsLoginWithGoogle = x.User.IsLoginWithGoogle,
+                    CreatedAt = x.User.CreatedAt
                 },
                 Tags = (request.IsRelationTag != null && (bool)request.IsRelationTag) ? tags.Where(t => t.PostTags.Any(p => p.PostId == x.Id) && !t.IsDeleted).Select(x => new TagDTO
                 {

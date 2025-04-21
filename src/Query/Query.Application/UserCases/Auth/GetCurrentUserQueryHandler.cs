@@ -36,7 +36,7 @@ namespace Query.Application.UserCases.Auth
 
             int userId = int.Parse(principal.Claims.First(x => x.Type == "Sub").Value);
 
-            var userRepository = _unitOfWork.Repository<User, int>();
+            var userRepository = _unitOfWork.Repository<Domain.Entities.User, int>();
             var user = await userRepository.FindByIdAsync(userId, false, cancellationToken, x => x.Role);
 
             if(user is null)

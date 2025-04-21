@@ -9,7 +9,6 @@ namespace Command.Domain.Entities
         public string Email {  get; set; }
         public string? Bio {  get; set; }
         public string? Avatar { get; set; }
-        public bool IsDeleted { get; set; }
         public int RoleId { get; set; }
         public bool IsLoginWithGoogle { get; set; }
         public bool IsActived {  get; set; }

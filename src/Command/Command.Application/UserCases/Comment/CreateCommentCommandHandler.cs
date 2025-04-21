@@ -33,6 +33,8 @@ namespace Command.Application.UserCases.Comment
                 var commentRepo = _unitOfWork.Repository<Domain.Entities.Comment, int>();
                 var postRepo = _unitOfWork.Repository<Domain.Entities.Post, int>();
                 var userRepo = _unitOfWork.Repository<User, int>();
+                var notificationRepo = _unitOfWork.Repository<Notification, int>();
+
                 var postExist = await postRepo.FindByIdAsync((int)request.PostId, false, cancellationToken);
 
                 if (postExist is null)
@@ -85,6 +87,25 @@ namespace Command.Application.UserCases.Comment
                 postRepo.Update(postExist);
                 await postRepo.SaveChangesAsync(cancellationToken);
 
+
+                // notification 
+                if(request.IsReplay != null && (bool)request.IsReplay && request.UserIdComment != null)
+                {
+                    var notification = new Notification
+                    {
+                        CommentId = comment.Id,
+                        NotificationAt = DateTime.Now,
+                        PostId = (int)request.PostId,
+                        RecipientUserId = (int)request.UserIdComment,
+                        ReplayForCommentId = comment.ParentCommentId,
+                        Seen = false,
+                        Type = "comment",
+                        UserId = request.UserId
+                    };
+                    notificationRepo.Add(notification);
+
+                    await notificationRepo.SaveChangesAsync(cancellationToken); 
+                }
                 transaction.Commit();
                 return Result.Success(response);
             }catch (Exception ex)
