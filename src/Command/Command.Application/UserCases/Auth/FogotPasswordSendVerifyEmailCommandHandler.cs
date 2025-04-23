@@ -29,7 +29,7 @@ namespace Command.Application.UserCases.Auth
             using var transaction = await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
-                var _userRepository = _unitOfWork.Repository<User, int>();
+                var _userRepository = _unitOfWork.Repository<Domain.Entities.User, int>();
                 var emailTokenRepository = _unitOfWork.Repository<EmailToken, int>();
 
                 var user = await _userRepository.FirstOrDefaultAsync(true, x => x.Email.Equals(request.Email)
@@ -37,7 +37,7 @@ namespace Command.Application.UserCases.Auth
                 
                 if(user is null)
                 {
-                    var message = MessageConstant.NotFound<User>(x => x.Email, request.Email);
+                    var message = MessageConstant.NotFound<Domain.Entities.User>(x => x.Email, request.Email);
                     return Result.Failure(Error.NotFound(message));
                 }
 

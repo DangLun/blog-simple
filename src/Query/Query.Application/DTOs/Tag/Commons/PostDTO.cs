@@ -13,6 +13,7 @@
         public bool IsPublished { get; set; }
         public bool IsDeleted { get; set; }
         public bool? IsSaved { get; set; }
+        public bool IsMine { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public UserDTO? Author { get; set; }

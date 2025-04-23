@@ -125,5 +125,18 @@ namespace Command.Presentation.Controllers.v1
 
             return BadRequest(result.Error);
         }
+
+        [HttpPost("change-password")]
+        [MapToApiVersion(1)]
+        [Authorize]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordCommand request)
+        {
+            var result = await mediator.Send(request);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }

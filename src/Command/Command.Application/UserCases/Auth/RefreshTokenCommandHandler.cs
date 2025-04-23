@@ -40,7 +40,7 @@ namespace Command.Application.UserCases.Auth
             using var transaction = await unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
-                var userRepository = unitOfWork.Repository<User, int>();
+                var userRepository = unitOfWork.Repository<Domain.Entities.User, int>();
                 
                 var refreshTokenEntity = await _refreshTokenRepository.FirstOrDefaultAsync(true,
                     x => x.Token == refreshToken && !x.IsRevoked);

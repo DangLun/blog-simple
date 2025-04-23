@@ -83,8 +83,9 @@ namespace Query.Application.UserCases.Tag
                         TotalReactions = p.TotalReactions,
                         TotalReads = p.TotalReads,
                         UpdatedAt = p.UpdatedAt,
-                        IsSaved = p.SavedByUsers.Any(su => su.UserId == request.UserIdCall) ?
-                           p.SavedByUsers.First(pt => pt.UserId == request.UserIdCall).IsActived : false,
+                        IsMine = p.User != null && p.User.Id == request.UserIdCall,
+                        IsSaved = p.SavedByUsers != null ? p.SavedByUsers.Any(su => su.UserId == request.UserIdCall) ?
+                           p.SavedByUsers.First(pt => pt.UserId == request.UserIdCall).IsActived : false : false,
                         Author = p.User != null ? new UserDTO
                         {
                             Id = p.User.Id,

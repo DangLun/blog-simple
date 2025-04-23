@@ -30,21 +30,20 @@ namespace Query.Application.UserCases.Post
         public async Task<Result<GetAllPostByUserIdResponseDTO>> Handle(GetAllPostByUserIdQuery request, CancellationToken cancellationToken)
         {
             var postRepo = unitOfWork.Repository<Domain.Entities.Post, int>();
-            var user = unitOfWork.Repository<Domain.Entities.User, int>();
-            var tag = unitOfWork.Repository<Domain.Entities.Tag, int>();
+            var userRepo = unitOfWork.Repository<Domain.Entities.User, int>();
+            var tagRepo = unitOfWork.Repository<Domain.Entities.Tag, int>();
             request.PaginationOptions.SortBy ??= "CreatedAt";
 
-            var currentUser = await user.FindByIdAsync((int)request.UserId, false, cancellationToken);
+            var user = await userRepo.FindByIdAsync((int)request.UserId, false, cancellationToken);
 
-            if(currentUser is null)
+            if(user is null)
             {
                 var message = MessageConstant.NotFound<Domain.Entities.User>(x => x.Id, request.UserId);
                 return Result.Failure(Error.NotFound(message));
             }
 
             var posts = postRepo.FindAll(false, x => x.User.Id == request.UserId, x => x.PostTags, x => x.User, x=>x.SavedByUsers);
-            var users = user.FindAll(false, x => x.Id == request.UserId);
-            var tags = tag.FindAll();
+            var tags = tagRepo.FindAll();
 
             if (request.FilterOptions != null && !request.FilterOptions.IncludeDeleted)
             {
@@ -75,6 +74,7 @@ namespace Query.Application.UserCases.Post
                     TotalReactions = x.TotalReactions,
                     TotalReads = x.TotalReads,
                     UpdatedAt = x.UpdatedAt,
+                    IsMine = x.User != null && x.User.Id == request.UserIdCall,
                     IsSaved = x.SavedByUsers != null ? x.SavedByUsers.Any(su => su.UserId == request.UserIdCall) ?
                             x.SavedByUsers.First(pt => pt.UserId == request.UserIdCall).IsActived : false : false,
                     Author = new UserDTO

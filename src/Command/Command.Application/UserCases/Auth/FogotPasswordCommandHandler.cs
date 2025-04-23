@@ -28,7 +28,7 @@ namespace Command.Application.UserCases.Auth
             using var transaction = await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
-                var _userRepository = _unitOfWork.Repository<User, int>();
+                var _userRepository = _unitOfWork.Repository<Domain.Entities.User, int>();
                 var _emailTokenRepository = _unitOfWork.Repository<EmailToken, int>();
 
                 var emailToken = await _emailTokenRepository.FirstOrDefaultAsync(true,
@@ -44,7 +44,7 @@ namespace Command.Application.UserCases.Auth
                 
                 if(user is null)
                 {
-                    var message = MessageConstant.NotFound<User>(x => x.Id, user!.Id);
+                    var message = MessageConstant.NotFound<Domain.Entities.User>(x => x.Id, user!.Id);
                     return Result.Failure(Error.NotFound(message));
                 }
                 // update new password

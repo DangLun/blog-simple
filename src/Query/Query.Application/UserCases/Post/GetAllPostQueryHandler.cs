@@ -99,6 +99,7 @@ namespace Query.Application.UserCases.Post
                     TotalReactions = x.TotalReactions,
                     TotalReads = x.TotalReads,
                     UpdatedAt = x.UpdatedAt,
+                    IsMine = x.User != null && x.User.Id == request.UserIdCall,
                     IsSaved = x.SavedByUsers != null ? x.SavedByUsers.Any(su => su.UserId == request.UserIdCall) ? 
                             x.SavedByUsers.First(pt => pt.UserId == request.UserIdCall).IsActived : false : false,
                     Author = new UserDTO

@@ -31,7 +31,7 @@ namespace Command.Application.UserCases.Post
             try
             {
                 var postRepo = unitOfWork.Repository<Domain.Entities.Post, int>(); 
-                var userRepo = unitOfWork.Repository<User, int>();
+                var userRepo = unitOfWork.Repository<Domain.Entities.User, int>();
                 var postReactionRepo = unitOfWork.Repository<PostReaction, int>();
                 var reactionRepo = unitOfWork.Repository<Reaction, int>();
 
@@ -45,7 +45,7 @@ namespace Command.Application.UserCases.Post
                 var user = await userRepo.FindByIdAsync((int)request.UserIdCall, true, cancellationToken);
                 if (user == null)
                 {
-                    var message = MessageConstant.NotFound<User>(x => x.Id, request.UserIdCall);
+                    var message = MessageConstant.NotFound<Domain.Entities.User>(x => x.Id, request.UserIdCall);
                     return Result.Failure(Error.NotFound(message));
                 }
 

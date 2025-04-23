@@ -34,7 +34,7 @@ namespace Command.Application.UserCases.Auth
             using var transaction = await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
-                var userRepository = _unitOfWork.Repository<User, int>();
+                var userRepository = _unitOfWork.Repository<Domain.Entities.User, int>();
                 var roleRepository = _unitOfWork.Repository<Role, int>();
                 var emailTokenRepository = _unitOfWork.Repository<EmailToken, int>();
 
@@ -46,7 +46,7 @@ namespace Command.Application.UserCases.Auth
 
                 var userRole = await roleRepository.FirstOrDefaultAsync(true, x => x.RoleName == RoleConst.ROLE_NAME_DEFAULT);
 
-                var user = new User
+                var user = new Domain.Entities.User
                 {
                     Avatar = UserConst.DEFAULT_AVATAR,
                     Bio = string.Empty,

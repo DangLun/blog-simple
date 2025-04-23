@@ -47,7 +47,7 @@ namespace Command.Application.UserCases.Auth
                 return Result.Failure(Error.NotFound("Không tồn tại GoogleAuth trong appSettings"));
             }
 
-            var _userRepository = _unitOfWork.Repository<User, int>();
+            var _userRepository = _unitOfWork.Repository<Domain.Entities.User, int>();
             var _roleRepository = _unitOfWork.Repository<Role, int>();
             var _refreshTokenRepository = _unitOfWork.Repository<RefreshToken, int>();
             using var transaction = await _unitOfWork.BeginTransactionAsync(cancellationToken); 
@@ -107,7 +107,7 @@ namespace Command.Application.UserCases.Auth
                     // chưa đăng nhập bằng google hay tài khoản bình thường bao giờ -> tạo mới tài khoản đăng nhập bằng google
                     var roleUser = await _roleRepository.FirstOrDefaultAsync(false, x => x.RoleName.ToLower().Equals("user"), cancellationToken);
 
-                    var userEntity = new User
+                    var userEntity = new Domain.Entities.User
                     {
                         FullName = userInfo.name,
                         Avatar = userInfo.picture,

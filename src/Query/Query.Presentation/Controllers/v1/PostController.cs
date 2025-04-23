@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Query.Application.DTOs.Post.InputDTO;
 using Query.Application.Query.Post;
@@ -94,6 +95,7 @@ namespace Query.Presentation.Controllers.v1
         }
         [MapToApiVersion(1)]
         [HttpGet("get-all-by-user-id")]
+        [Authorize]
         public async Task<IActionResult> GetAllPostByUserIdV1([FromQuery] GetAllPostByUserIdRequestDTO request)
         {
             var query = new GetAllPostByUserIdQuery
@@ -101,13 +103,41 @@ namespace Query.Presentation.Controllers.v1
                 FilterOptions = new Contract.Options.FilterOptions
                 {
                     IncludeDeleted = request.IncludeDeleted ?? false,
-                    IncludeActived = request.IsPublic ?? true
+                    IncludeActived = request.IsPublish ?? true
                 },
                 PaginationOptions = new Contract.Options.PaginationOptions(request.SortBy, request.IsDescending,
                 request.Page, request.PageSize),
                 IsRelationTag = request.IsRelationTag ?? false,
                 UserIdCall = request.UserIdCall,
                 UserId = request.UserId,
+            };
+            var result = await mediator.Send(query);
+            if (result.IsSuccess)
+            {
+                return Ok(result.Value);
+            }
+
+            return BadRequest(result.Error);
+        }
+
+        [MapToApiVersion(1)]
+        [HttpGet("get-all-saved-by-user-id")]
+        [Authorize]
+        public async Task<IActionResult> GetAllPostSavedByUserIdV1([FromQuery] GetAllPostSavedByUserIdRequestDTO request)
+        {
+            var query = new GetAllPostSavedByUserIdQuery
+            {
+                FilterOptions = new Contract.Options.FilterOptions
+                {
+                    IncludeDeleted = request.IncludeDeleted ?? false,
+                    IncludeActived = request.IsPublish ?? true
+                },
+                PaginationOptions = new Contract.Options.PaginationOptions(request.SortBy, request.IsDescending,
+                request.Page, request.PageSize),
+                IsRelationTag = request.IsRelationTag ?? false,
+                UserIdCall = request.UserIdCall,
+                UserId = request.UserId,
+                IsSaved = request.IsSaved ?? false
             };
             var result = await mediator.Send(query);
             if (result.IsSuccess)

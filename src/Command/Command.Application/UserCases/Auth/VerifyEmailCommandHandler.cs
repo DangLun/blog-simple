@@ -28,7 +28,7 @@ namespace Command.Application.UserCases.Auth
             using var transaction = await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
-                var userRepository = _unitOfWork.Repository<User, int>();
+                var userRepository = _unitOfWork.Repository<Domain.Entities.User, int>();
                 var emailTokenRepository = _unitOfWork.Repository<EmailToken, int>();
 
                 EmailToken? token = await emailTokenRepository.FirstOrDefaultAsync(true, x => x.Token == request.Token, cancellationToken,

@@ -71,13 +71,14 @@ namespace Query.Application.UserCases.Post
                 TotalReactions = post.TotalReactions,
                 TotalReads = post.TotalReads,
                 UpdatedAt = post.UpdatedAt,
+
                 IsSaved = post.SavedByUsers == null ? false : post.SavedByUsers.Any(su => su.UserId == request.UserIdCall && su.IsActived) ?
                             true : false,
                 PostText = post.PostText.Content,
 
                 IsFollowed = follows.FirstOrDefault(f => f.FollowedId == post.User.Id && f.FollowerId == request.UserIdCall) != null,
 
-                IsMe = post.User.Id == request.UserIdCall,
+                IsMe = post.User != null && post.User.Id == request.UserIdCall,
 
                 TotalSaved = post.SavedByUsers == null ? 0 : post.SavedByUsers.Where(s => s.IsActived).ToList().Count,
 

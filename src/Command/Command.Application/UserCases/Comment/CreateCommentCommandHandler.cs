@@ -32,7 +32,7 @@ namespace Command.Application.UserCases.Comment
             {
                 var commentRepo = _unitOfWork.Repository<Domain.Entities.Comment, int>();
                 var postRepo = _unitOfWork.Repository<Domain.Entities.Post, int>();
-                var userRepo = _unitOfWork.Repository<User, int>();
+                var userRepo = _unitOfWork.Repository<Domain.Entities.User, int>();
                 var notificationRepo = _unitOfWork.Repository<Notification, int>();
 
                 var postExist = await postRepo.FindByIdAsync((int)request.PostId, false, cancellationToken);
@@ -47,7 +47,7 @@ namespace Command.Application.UserCases.Comment
 
                 if (userExist is null)
                 {
-                    var message = MessageConstant.NotFound<User>(x => x.Id, request.UserId);
+                    var message = MessageConstant.NotFound<Domain.Entities.User>(x => x.Id, request.UserId);
                     return Result.Failure(Error.Conflict(message));
                 }
 

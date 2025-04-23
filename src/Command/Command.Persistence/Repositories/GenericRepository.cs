@@ -58,7 +58,7 @@ namespace Command.Persistence.Repositories
             if (includeProperties.Any())
             {
                 // Include specified properties
-                query.IncludeMultiple(includeProperties);
+                query = query.IncludeMultiple(includeProperties);
             }
 
             // Apply tracking option
@@ -84,7 +84,7 @@ namespace Command.Persistence.Repositories
             if (includeProperties.Any())
             {
                 // Include specified properties
-                query.IncludeMultiple(includeProperties);
+                query = query.IncludeMultiple(includeProperties);
             }
 
             // Apply tracking option
@@ -114,7 +114,7 @@ namespace Command.Persistence.Repositories
             if (includeProperties.Any())
             {
                 // Include specified properties
-                query.IncludeMultiple(includeProperties);
+                query = query.IncludeMultiple(includeProperties);
             }
 
             // Apply tracking option
@@ -180,7 +180,7 @@ namespace Command.Persistence.Repositories
             var query = Entities.AsQueryable();
             if (includeProperties.Any())
             {
-                query.IncludeMultiple(includeProperties);
+                query = query.IncludeMultiple(includeProperties);
             }
 
             query = isTracking ? query : query.AsNoTracking();

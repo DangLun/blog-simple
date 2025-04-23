@@ -20,6 +20,8 @@
   <ItemGroup>
     <Folder Include="DTOs\Post\" />
     <Folder Include="DTOs\Upload\InputDTOs\" />
+    <Folder Include="DTOs\User\InputDTOs\" />
+    <Folder Include="DTOs\User\OutputDTOs\" />
   </ItemGroup>
 
 </Project>

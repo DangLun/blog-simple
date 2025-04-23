@@ -10,6 +10,7 @@ namespace Command.Infrastructure.Services
         {
             try
             {
+
                 Guid guid = Guid.NewGuid();
                 string fileName = guid.ToString() + Path.GetExtension(file.FileName);
 
