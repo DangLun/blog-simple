@@ -8,6 +8,7 @@ using Query.Application.Query.Post;
 using Query.Domain.Abstractions.Repositories;
 using Query.Domain.Entities;
 
+
 namespace Query.Application.UserCases.Post
 {
     public class GetDetailPostQueryValidator : AbstractValidator<GetDetailPostQuery>
@@ -27,7 +28,7 @@ namespace Query.Application.UserCases.Post
         {
             var postRepo = unitOfWork.Repository<Domain.Entities.Post, int>();
             var postTextRepo = unitOfWork.Repository<PostText, int>();
-            var commentRepo = unitOfWork.Repository<Comment, int>();
+            var commentRepo = unitOfWork.Repository<Domain.Entities.Comment, int>();
             var savedPostRepo = unitOfWork.Repository<PostSaved, int>();
             var postReactionRepo = unitOfWork.Repository<PostReaction, int>();
             var followRepo = unitOfWork.Repository<Follow, int>();
@@ -164,7 +165,7 @@ namespace Query.Application.UserCases.Post
         
         private int GetDepthComment(int commentId, int postId)
         {
-            var commentRepo = unitOfWork.Repository<Comment, int>();
+            var commentRepo = unitOfWork.Repository<Domain.Entities.Comment, int>();
 
             int depth = 1;
 
@@ -179,7 +180,7 @@ namespace Query.Application.UserCases.Post
             {
                 depth++;
                 int l = 0, r = comments.Count() - 1;
-                Comment? parentComment = null;
+                Domain.Entities.Comment? parentComment = null;
                 while(l <= r)
                 {
                     int mid = l + r >> 1;
@@ -200,7 +201,7 @@ namespace Query.Application.UserCases.Post
         private List<CommentDTO> GetReplieds(int commentId, int? userIdCall, int postId)
         {
             var response = new List<CommentDTO>();
-            var commentRepo = unitOfWork.Repository<Comment, int>();
+            var commentRepo = unitOfWork.Repository<Domain.Entities.Comment, int>();
             
             var commentChilds = commentRepo.FindAll(false, x => x.ParentCommentId == commentId 
             && x.PostId == postId, x=>x.User).ToList();

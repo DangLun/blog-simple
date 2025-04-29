@@ -42,6 +42,18 @@ namespace Command.Presentation.Controllers.v1
             return BadRequest(result.Error);
         }
 
+        [HttpPost("update")]
+        [MapToApiVersion(1)]
+        public async Task<IActionResult> UpdateV1([FromForm] UpdatePostCommand request)
+        {
+            var result = await mediator.Send(request);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Error);
+        }
+
         [HttpPost("saved-post")]
         [MapToApiVersion(1)]
         [Authorize]

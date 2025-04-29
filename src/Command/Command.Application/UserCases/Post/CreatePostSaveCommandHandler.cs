@@ -54,7 +54,7 @@ namespace Command.Application.UserCases.Post
                     {
                         UserId = (int)request.UserIdCall,
                         PostId = (int)request.PostId,
-                        IsActived = (bool)request.Status
+                        IsActived = !(bool)request.Status // alway true
                     };
                     savedRepo.Add(savedEntity);
                 }
