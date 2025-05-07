@@ -36,7 +36,7 @@ namespace Command.Application.UserCases.User
                 var followRepo = unitOfWork.Repository<Follow, int>();
                 var refreshTokenRepo = unitOfWork.Repository<RefreshToken, int>();
                 var postSavedRepo = unitOfWork.Repository<PostSaved, int>();
-                var notificationRepo = unitOfWork.Repository<Notification, int>();
+                var notificationRepo = unitOfWork.Repository<Domain.Entities.Notification, int>();
                 var postTextRepo = unitOfWork.Repository<PostText, int>();
 
                 var user = await userRepo.FindByIdAsync((int)request.Id, true, cancellationToken);

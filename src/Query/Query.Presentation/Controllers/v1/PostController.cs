@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Query.Application.DTOs.Post.InputDTO;
 using Query.Application.Query.Post;
 using Query.Presentation.Abstractions;
@@ -33,11 +34,10 @@ namespace Query.Presentation.Controllers.v1
                     SortBy = request.SortBy,
                     IsDescending = request.IsDescending ?? true
                 },
-                FilterOptions = new Contract.Options.FilterOptions
-                {
-                    IncludeDeleted = request.IncludeDeleted ?? false,
-                    IncludeActived = request.IsPublic ?? true
-                },
+                StatusDeleteds = request.StatusDeleteds != null ? 
+                    JsonConvert.DeserializeObject<List<bool>>(request.StatusDeleteds.ToString()) : null,
+                StatusPublisheds = request.StatusPublisheds != null ?
+                    JsonConvert.DeserializeObject<List<bool>>(request.StatusPublisheds.ToString()) : null,
                 IsRelationTag = request.IsRelationTag ?? false,
                 FollowOrRecent = request.FollowOrRecent ?? "recent",
                 UserIdCall = request.UserIdCall ?? null,

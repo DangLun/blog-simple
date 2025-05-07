@@ -55,18 +55,14 @@ namespace Query.Application.UserCases.Post
                              );
             }
 
-
-            if(request.FilterOptions != null && !request.FilterOptions.IncludeDeleted)
+            if(request.StatusPublisheds != null && request.StatusPublisheds.Any())
             {
-                posts = posts.Where(x => !x.IsDeleted);
+                posts = posts.Where(x => request.StatusPublisheds.Contains(x.IsPublished));
             }
 
-            if(request.FilterOptions != null && request.FilterOptions.IncludeActived) // isPublic = true
+            if (request.StatusDeleteds != null && request.StatusDeleteds.Any())
             {
-                posts = posts.Where(x => x.IsPublished);
-            }else if(request.FilterOptions != null && !request.FilterOptions.IncludeActived)
-            {
-                posts = posts.Where(x => !x.IsPublished);
+                posts = posts.Where(x => request.StatusDeleteds.Contains(x.IsDeleted));
             }
 
             if (request.SortStatus != null && request.CurrentDate != null)

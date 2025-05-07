@@ -9,5 +9,6 @@
         public string? Avatar { get; set; }
         public string? RoleName { get; set; }
         public bool IsLoginGoogle { get; set; }
+        public bool HasNewNotification { get; set; }
     }
 }

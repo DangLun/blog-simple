@@ -60,7 +60,8 @@ namespace Command.Application.UserCases.Auth
                 }
 
                 // get user got refreshtoken
-                var user = await userRepository.FindByIdAsync(refreshTokenEntity.UserId);
+                var user = await userRepository.FindByIdAsync(refreshTokenEntity.UserId, false, cancellationToken, 
+                    x => x.Role);
 
                 // revoke old refreshToken
                 await _refreshTokenRepository.RevokeRefreshToken(refreshTokenEntity);

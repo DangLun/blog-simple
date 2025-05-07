@@ -9,7 +9,8 @@ namespace Query.Application.Query.Post
     {
         public string? SearchText { get; set; }
         public PaginationOptions? PaginationOptions { get; set; }
-        public FilterOptions? FilterOptions { get; set; }
+        public List<bool>? StatusDeleteds { get; set; }
+        public List<bool>? StatusPublisheds { get; set; }
         public bool? IsRelationTag { get; set; }
         public string? FollowOrRecent { get; set; }
         public int? UserIdCall { get; set; }

@@ -67,7 +67,8 @@ namespace Command.Application.UserCases.Auth
                     var json = await response.Content.ReadAsStringAsync();
                     var userInfo = JsonSerializer.Deserialize<GoogleUserInfoDTO>(json);
 
-                    var user = await _userRepository.FirstOrDefaultAsync(true, x => x.Email.Equals(userInfo.email) && x.IsActived, cancellationToken);
+                    var user = await _userRepository.FirstOrDefaultAsync(true, x => x.Email.Equals(userInfo.email) && x.IsActived, cancellationToken,
+                        x => x.Role);
                     
                     // check user có email và chưa bị xóa có tồn tại không ?
                     if(user is not null)
@@ -117,7 +118,8 @@ namespace Command.Application.UserCases.Auth
                         IsEmailVerified = true,
                         IsLoginWithGoogle = true,
                         LastLoginAt = DateTime.Now,
-                        RoleId = roleUser.Id
+                        RoleId = roleUser.Id,
+                        Role = roleUser
                     };
 
                     _userRepository.Add(userEntity);

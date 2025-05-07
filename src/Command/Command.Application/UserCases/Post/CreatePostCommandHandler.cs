@@ -38,7 +38,7 @@ namespace Command.Application.UserCases.Post
                 var tagRepo = unitOfWork.Repository<Tag, int>();
                 var postTextRepo = unitOfWork.Repository<PostText, int>();
                 var followRepo = unitOfWork.Repository<Follow, int>();
-                var notificationRepo = unitOfWork.Repository<Notification, int>();  
+                var notificationRepo = unitOfWork.Repository<Domain.Entities.Notification, int>();  
 
                 var postText = new PostText
                 {
@@ -89,7 +89,7 @@ namespace Command.Application.UserCases.Post
 
                 foreach(var recipientId in recipientUserIds)
                 {
-                    var notification = new Notification
+                    var notification = new Domain.Entities.Notification
                     {
                         Type = "Follow",
                         NotificationAt = DateTime.Now,

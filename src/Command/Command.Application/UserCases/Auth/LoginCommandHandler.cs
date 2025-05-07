@@ -36,7 +36,8 @@ namespace Command.Application.UserCases.Auth
             try
             {
                 var userRepository = unitOfWork.Repository<Domain.Entities.User, int>();
-                var user = await userRepository.FirstOrDefaultAsync(true, x => x.Email == request.Email, cancellationToken);
+                var user = await userRepository.FirstOrDefaultAsync(true, x => x.Email == request.Email, cancellationToken, 
+                    x => x.Role);
 
                 if (user is null || !PasswordExtensions.Verify(request.Password, user.PasswordHash))
                 {

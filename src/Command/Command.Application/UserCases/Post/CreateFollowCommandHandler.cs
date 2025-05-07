@@ -29,7 +29,7 @@ namespace Command.Application.UserCases.Post
             try
             {
                 var followRepo = unitOfWork.Repository<Follow, int>();
-                var notificationRepo = unitOfWork.Repository<Notification, int>();
+                var notificationRepo = unitOfWork.Repository<Domain.Entities.Notification, int>();
                 var userRepo = unitOfWork.Repository<Domain.Entities.User, int>();
 
                 
@@ -69,7 +69,7 @@ namespace Command.Application.UserCases.Post
 
                     // thông báo
 
-                    var notification = new Notification
+                    var notification = new Domain.Entities.Notification
                     {
                         NotificationAt = DateTime.Now,
                         RecipientUserId = (int)request.FollowedId,

@@ -2,6 +2,7 @@
 using Contract.Shared;
 using FluentValidation;
 using MediatR;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Query.Application.DTOs.Auth.InputDTOs;
 using Query.Application.Query.Auth;
 using Query.Domain.Abstractions.Auth;
@@ -37,6 +38,7 @@ namespace Query.Application.UserCases.Auth
             int userId = int.Parse(principal.Claims.First(x => x.Type == "Sub").Value);
 
             var userRepository = _unitOfWork.Repository<Domain.Entities.User, int>();
+            var notificationRepo = _unitOfWork.Repository<Domain.Entities.Notification, int>();
             var user = await userRepository.FindByIdAsync(userId, false, cancellationToken, x => x.Role);
 
             if(user is null)
@@ -44,6 +46,10 @@ namespace Query.Application.UserCases.Auth
                 string message = "Người dùng không tồn tại.";
                 return Result.Failure(Error.NotFound(message));
             }
+
+            var notSeenMessage = await notificationRepo.FirstOrDefaultAsync(false,
+                x => x.RecipientUserId == user.Id && !x.Seen, cancellationToken);
+
 
             var response = new GetCurrentUserDTO
             {
@@ -54,6 +60,7 @@ namespace Query.Application.UserCases.Auth
                 FullName = user.FullName,
                 RoleName = user.Role?.RoleName ?? string.Empty,
                 IsLoginGoogle = user.IsLoginWithGoogle,
+                HasNewNotification = notSeenMessage != null
             };
 
             return response;

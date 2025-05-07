@@ -23,7 +23,8 @@ namespace Command.Infrastructure.Authentication
         {
             var claims = new List<Claim> { 
                 new("Sub", user.Id.ToString()),
-                new(JwtRegisteredClaimNames.Email, user.Email)
+                new(JwtRegisteredClaimNames.Email, user.Email),
+                new(ClaimTypes.Role, user.Role.RoleName)
             };
 
             var secretKeyBytes = Encoding.UTF8.GetBytes(_jwtOptions.SecretKey);
