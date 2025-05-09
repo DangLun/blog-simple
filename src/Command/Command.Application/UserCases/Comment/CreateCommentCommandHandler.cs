@@ -1,7 +1,6 @@
 ﻿using Command.Application.Commands.Comment;
 using Command.Application.DTOs.Comment;
 using Command.Domain.Abstractions.Repositories;
-using Command.Domain.Entities;
 using Contract.Errors;
 using Contract.Shared;
 using FluentValidation;

@@ -1,6 +1,7 @@
 ﻿using Asp.Versioning;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Query.Application.DTOs.Tag.InputDTOs;
 using Query.Application.Query.Tag;
 using Query.Presentation.Abstractions;
@@ -32,11 +33,8 @@ namespace Query.Presentation.Controllers.v1
                     SortBy = request.SortBy,
                     IsDescending = request.IsDescending ?? true
                 },
-                FilterOptions = new Contract.Options.FilterOptions
-                {
-                    IncludeDeleted = request.IncludeDeleted ?? false,
-                    IncludeActived = false
-                },
+                StatusDeleteds = request.StatusDeleteds != null ?
+                    JsonConvert.DeserializeObject<List<bool>>(request.StatusDeleteds.ToString()) : null,
                 IsRelationPostTag = request.IsRelationPostTag ?? false,
             };
             var result = await mediator.Send(query);

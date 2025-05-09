@@ -13,8 +13,8 @@ namespace Command.Application.UserCases.Post
         {
             RuleFor(x => x.Ids).NotNull()
                 .WithMessage("Ids không được null")
-                .Must(postIds => postIds.Any(x => x > 0))
-                .WithMessage("Toàn bộ Id phải > 0");
+                .Must(postIds => postIds.Any())
+                .WithMessage("Vui lòng chọn trước khi thao tác");
         }
     }
     public class ForceDetelePostsCommandHandler : IRequestHandler<ForceDeletePostsCommand, Result>

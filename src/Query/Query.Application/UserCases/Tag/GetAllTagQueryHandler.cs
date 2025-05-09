@@ -35,8 +35,8 @@ namespace Query.Application.UserCases.Tag
             }
 
             // nếu không truyền deleted thì loại bỏ chỉ lấy isDeleted = false
-            if (request.FilterOptions is not null && !request.FilterOptions.IncludeDeleted)
-                query = query.Where(x => !x.IsDeleted);
+            if (request.StatusDeleteds is not null)
+                query = query.Where(x => request.StatusDeleteds.Contains(x.IsDeleted));
 
             query = query.Sort(request.PaginationOptions.SortBy, request.PaginationOptions.IsDescending);
 

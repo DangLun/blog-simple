@@ -71,7 +71,7 @@ namespace Command.Presentation.Controllers.v1
         [HttpPost("reaction")]
         [MapToApiVersion(1)]
         [Authorize(Roles = $"{nameof(PermissionType.ADMIN)},{nameof(PermissionType.USER)}")]
-        public async Task<IActionResult> CreateReactionPost([FromBody] CreateReactionCommand request)
+        public async Task<IActionResult> CreateReactionPost([FromBody] InteractReactionCommand request)
         {
             var result = await mediator.Send(request);
             if (result.IsSuccess)

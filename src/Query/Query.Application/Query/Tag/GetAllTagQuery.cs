@@ -9,7 +9,7 @@ namespace Query.Application.Query.Tag
     {
         public string? SearchText { get; set; }
         public PaginationOptions? PaginationOptions { get; set; }
-        public FilterOptions? FilterOptions { get; set; }
+        public List<bool>? StatusDeleteds { get; set; }
         public bool? IsRelationPostTag { get; set; }
     }
 }

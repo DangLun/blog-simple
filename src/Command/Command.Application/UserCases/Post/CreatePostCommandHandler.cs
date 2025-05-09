@@ -35,7 +35,7 @@ namespace Command.Application.UserCases.Post
             try
             {
                 var postRepo = unitOfWork.Repository<Domain.Entities.Post, int>();
-                var tagRepo = unitOfWork.Repository<Tag, int>();
+                var tagRepo = unitOfWork.Repository<Domain.Entities.Tag, int>();
                 var postTextRepo = unitOfWork.Repository<PostText, int>();
                 var followRepo = unitOfWork.Repository<Follow, int>();
                 var notificationRepo = unitOfWork.Repository<Domain.Entities.Notification, int>();  

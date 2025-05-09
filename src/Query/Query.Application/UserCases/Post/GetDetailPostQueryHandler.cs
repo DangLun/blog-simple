@@ -1,4 +1,5 @@
-﻿using Contract.Errors;
+﻿using Contract.Constants;
+using Contract.Errors;
 using Contract.Shared;
 using FluentValidation;
 using MediatR;
@@ -35,7 +36,6 @@ namespace Query.Application.UserCases.Post
             var tagRepo = unitOfWork.Repository<Domain.Entities.Tag, int>();
             var userRepo = unitOfWork.Repository<Domain.Entities.User, int>();
             var reactionRepo = unitOfWork.Repository<Reaction, int>();
-
 
             var follows = followRepo.FindAll();
             var tags = tagRepo.FindAll();
@@ -112,7 +112,7 @@ namespace Query.Application.UserCases.Post
                                 },
                                 Replieds = GetReplieds(y.c.Id, request.UserIdCall, post.Id)
                             }).ToList(),
-                PostRelates = postRelates.Where(pr => pr.UserId == post.User.Id && !post.IsDeleted && post.IsPublished).Take(5).Select(p => new PostRelateDTO
+                PostRelates = postRelates.Where(pr => pr.UserId == post.User.Id && !pr.IsDeleted && pr.IsPublished).Take(5).Select(p => new PostRelateDTO
                 {
                     PostId = p.Id,
                     PostTitle = p.PostTitle,

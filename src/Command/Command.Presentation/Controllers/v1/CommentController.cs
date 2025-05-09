@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Command.Presentation.Controllers.v1
 {
-
     [ApiVersion(1)]
     [Route("api/v{v:apiVersion}/comment")]
     public class CommentController : ApiController

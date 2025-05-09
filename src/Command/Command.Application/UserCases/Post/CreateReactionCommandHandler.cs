@@ -10,7 +10,7 @@ using System.Data;
 namespace Command.Application.UserCases.Post
 {
 
-    public class CreateReactionCommandValidator : AbstractValidator<CreateReactionCommand>
+    public class CreateReactionCommandValidator : AbstractValidator<InteractReactionCommand>
     {
         public CreateReactionCommandValidator() {
             RuleFor(x => x.PostId).NotNull().GreaterThan(0);
@@ -19,13 +19,13 @@ namespace Command.Application.UserCases.Post
         }
     }
 
-    public class CreateReactionCommandHandler : IRequestHandler<CreateReactionCommand, Result>
+    public class CreateReactionCommandHandler : IRequestHandler<InteractReactionCommand, Result>
     {
         private readonly IUnitOfWork unitOfWork;
         public CreateReactionCommandHandler(IUnitOfWork unitOfWork) { 
             this.unitOfWork = unitOfWork;
         }
-        public async Task<Result> Handle(CreateReactionCommand request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(InteractReactionCommand request, CancellationToken cancellationToken)
         {
             using IDbTransaction transaction = await unitOfWork.BeginTransactionAsync(cancellationToken);
             try
@@ -33,7 +33,7 @@ namespace Command.Application.UserCases.Post
                 var postRepo = unitOfWork.Repository<Domain.Entities.Post, int>(); 
                 var userRepo = unitOfWork.Repository<Domain.Entities.User, int>();
                 var postReactionRepo = unitOfWork.Repository<PostReaction, int>();
-                var reactionRepo = unitOfWork.Repository<Reaction, int>();
+                var reactionRepo = unitOfWork.Repository<Domain.Entities.Reaction, int>();
 
                 var post = await postRepo.FindByIdAsync((int)request.PostId, true, cancellationToken);
                 if (post == null)
@@ -52,7 +52,7 @@ namespace Command.Application.UserCases.Post
                 var reaction = await reactionRepo.FindByIdAsync((int)request.ReactionId, true, cancellationToken);
                 if (user == null)
                 {
-                    var message = MessageConstant.NotFound<Reaction>(x => x.Id, request.ReactionId);
+                    var message = MessageConstant.NotFound<Domain.Entities.Reaction>(x => x.Id, request.ReactionId);
                     return Result.Failure(Error.NotFound(message));
                 }
 

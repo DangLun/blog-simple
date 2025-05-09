@@ -68,7 +68,7 @@ namespace Query.Application.UserCases.Tag
             {
                 IQueryable<PostDTO> postsQuery =
                     from p in posts
-                    where p.PostTags.Any(pt => pt.TagId == tag.Id)
+                    where p.PostTags.Any(pt => pt.TagId == tag.Id) && p.IsPublished && !p.IsDeleted
                     select new PostDTO
                     {
                         Id = p.Id,

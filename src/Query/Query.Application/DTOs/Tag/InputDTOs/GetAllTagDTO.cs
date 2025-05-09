@@ -7,7 +7,7 @@
         public int? PageSize { get; set; }
         public bool? IsDescending { get; set; }
         public string? SortBy { get; set; }
-        public bool? IncludeDeleted { get; set; }
+        public string? StatusDeleteds { get; set; }
         public bool? IsRelationPostTag { get; set; }
     }
 }
