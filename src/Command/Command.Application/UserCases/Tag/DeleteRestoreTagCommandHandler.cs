@@ -31,7 +31,7 @@ namespace Command.Application.UserCases.Tag
                 var tag = await tagRepo.FindByIdAsync((int)request.Id, true, cancellationToken);
                 if(tag == null)
                 {
-                    var message = MessageConstant.NotFound<Domain.Entities.Post>(x => x.Id, request.Id);
+                    var message = MessageConstant.NotFound<Domain.Entities.Tag>(x => x.Id, request.Id);
                     return Result.Failure(Error.NotFound(message));
                 }
 

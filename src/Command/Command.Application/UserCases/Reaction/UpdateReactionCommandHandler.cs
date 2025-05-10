@@ -1,6 +1,7 @@
-﻿using Command.Application.Commands.Comment;
+﻿using Command.Application.Abstractions;
 using Command.Application.Commands.Reaction;
 using Command.Domain.Abstractions.Repositories;
+using Contract.Constants;
 using Contract.Errors;
 using Contract.Shared;
 using FluentValidation;
@@ -20,9 +21,11 @@ namespace Command.Application.UserCases.Reaction
     public class UpdateReactionCommandHandler : IRequestHandler<UpdateReactionCommand, Result>
     {
         private readonly IUnitOfWork unitOfWork;
-        public UpdateReactionCommandHandler(IUnitOfWork unitOfWork)
+        private readonly IFileService fileService;
+        public UpdateReactionCommandHandler(IUnitOfWork unitOfWork, IFileService fileService)
         {
             this.unitOfWork = unitOfWork;
+            this.fileService = fileService; 
         }
         public async Task<Result> Handle(UpdateReactionCommand request, CancellationToken cancellationToken)
         {
@@ -41,7 +44,11 @@ namespace Command.Application.UserCases.Reaction
                 reaction.ReactionName = request.ReactionName;
                 reaction.ReactionDescription = request.ReactionDescription;
                 reaction.IsDeleted = request.IsDeleted ?? reaction.IsDeleted;
-                reaction.ReactionIcon = request.ReactionIcon;
+                if(request.ReactionIcon is not null)
+                {
+                    var fileName = await fileService.UploadFile(request.ReactionIcon, Const.UPLOAD_DIRECTORY);
+                    reaction.ReactionIcon = fileName;
+                }
                 reaction.UpdatedAt = DateTime.Now;
                 reactionRepo.Update(reaction);
                 await unitOfWork.SaveChangesAsync(cancellationToken);

@@ -1,6 +1,8 @@
 ﻿using Asp.Versioning;
+using Command.Application.Commands.Tag;
 using Command.Application.Commands.User;
 using Command.Presentation.Abstractions;
+using Contract.Enumerations;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +34,45 @@ namespace Command.Presentation.Controllers.v1
         [MapToApiVersion(1)]
         [Authorize]
         public async Task<IActionResult> ForceDeleteV1([FromBody] ForceDeleteUserCommand request)
+        {
+            var result = await mediator.Send(request);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Error);
+        }
+
+        [MapToApiVersion(1)]
+        [HttpDelete("delete-restore")]
+        [Authorize(Roles = nameof(PermissionType.ADMIN))]
+        public async Task<IActionResult> DeleteRestoreUser([FromBody] DeleteRestoreUserCommand request)
+        {
+            var result = await mediator.Send(request);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Error);
+        }
+
+        [MapToApiVersion(1)]
+        [HttpDelete("delete-restore-multiple")]
+        [Authorize(Roles = nameof(PermissionType.ADMIN))]
+        public async Task<IActionResult> DeleteRestoreUsers([FromBody] DeleteRestoreUsersCommand request)
+        {
+            var result = await mediator.Send(request);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Error);
+        }
+
+        [MapToApiVersion(1)]
+        [HttpDelete("force-delete-multiple")]
+        [Authorize(Roles = nameof(PermissionType.ADMIN))]
+        public async Task<IActionResult> ForceDeleteUsers([FromBody] ForceDeleteUsersCommand request)
         {
             var result = await mediator.Send(request);
             if (result.IsSuccess)

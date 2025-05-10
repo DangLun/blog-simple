@@ -41,7 +41,8 @@ namespace Query.Application.UserCases.Post
             if (!string.IsNullOrWhiteSpace(request.SearchText))
             {
                 posts = posts.Where(p =>
-                    p.PostTitle.Contains(request.SearchText));
+                    p.PostTitle.ToLower().Contains(request.SearchText.ToLower()) 
+                    || (p.User != null && p.User.FullName.ToLower().Contains(request.SearchText.ToLower())));
             }
 
             if (request.FollowOrRecent != null && 

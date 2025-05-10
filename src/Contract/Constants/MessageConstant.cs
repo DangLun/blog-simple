@@ -119,5 +119,10 @@ namespace System
         {
             return "Token has expired";
         }
+
+        public static string AccountBanned()
+        {
+            return "Tài khoản của bạn đã bị tạm khóa!";
+        }
     }
 }

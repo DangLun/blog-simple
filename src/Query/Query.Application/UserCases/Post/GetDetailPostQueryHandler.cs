@@ -1,5 +1,4 @@
-﻿using Contract.Constants;
-using Contract.Errors;
+﻿using Contract.Errors;
 using Contract.Shared;
 using FluentValidation;
 using MediatR;
@@ -35,7 +34,7 @@ namespace Query.Application.UserCases.Post
             var followRepo = unitOfWork.Repository<Follow, int>();
             var tagRepo = unitOfWork.Repository<Domain.Entities.Tag, int>();
             var userRepo = unitOfWork.Repository<Domain.Entities.User, int>();
-            var reactionRepo = unitOfWork.Repository<Reaction, int>();
+            var reactionRepo = unitOfWork.Repository<Domain.Entities.Reaction, int>();
 
             var follows = followRepo.FindAll();
             var tags = tagRepo.FindAll();

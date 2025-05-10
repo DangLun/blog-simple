@@ -51,6 +51,12 @@ namespace Command.Application.UserCases.Auth
                     return Result.Failure(Error.NotFound(message));
                 }
 
+                if (!user.IsActived)
+                {
+                    var message = MessageConstant.AccountBanned();
+                    return Result.Failure(Error.NotFound(message));
+                }
+
                 // set last login at for user
                 user.LastLoginAt = DateTime.Now;
                 userRepository.Update(user);
