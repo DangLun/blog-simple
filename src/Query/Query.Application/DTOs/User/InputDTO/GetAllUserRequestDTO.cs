@@ -8,5 +8,7 @@
         public bool? IsDescending { get; set; }
         public string? SortBy { get; set; }
         public string? StatusActiveds { get; set; } // "[0,1,2]"
+        public string? StatusPermission { get; set; } // "["ADMIN", "USER"]"
+        public string? StatusLoginGoogle { get; set; } // "[true, false]"
     }
 }

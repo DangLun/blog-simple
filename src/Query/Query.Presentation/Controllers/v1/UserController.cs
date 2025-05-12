@@ -4,11 +4,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using Query.Application.DTOs.Comment.InputDTOs;
-using Query.Application.DTOs.Post.InputDTO;
 using Query.Application.DTOs.User.InputDTO;
-using Query.Application.Query.Comment;
-using Query.Application.Query.Post;
 using Query.Application.Query.User;
 using Query.Presentation.Abstractions;
 
@@ -85,6 +81,10 @@ namespace Query.Presentation.Controllers.v1
                 },
                 StatusActiveds = request.StatusActiveds != null ?
                     JsonConvert.DeserializeObject<List<bool>>(request.StatusActiveds.ToString()) : null,
+                StatusPermission = request.StatusPermission != null ?
+                    JsonConvert.DeserializeObject<List<string>>(request.StatusPermission.ToString()) : null,
+                StatusLoginGoogle = request.StatusLoginGoogle != null ?
+                    JsonConvert.DeserializeObject<List<bool>>(request.StatusLoginGoogle.ToString()) : null,
             };
             var result = await mediator.Send(query);
             if (result.IsSuccess)

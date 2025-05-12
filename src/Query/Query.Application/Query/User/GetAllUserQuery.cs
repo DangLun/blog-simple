@@ -10,5 +10,7 @@ namespace Query.Application.Query.User
         public string? SearchText { get; set; }
         public PaginationOptions? PaginationOptions { get; set; }
         public List<bool>? StatusActiveds { get; set; }
+        public List<string>? StatusPermission { get; set; }
+        public List<bool>? StatusLoginGoogle { get; set; }
     }
 }

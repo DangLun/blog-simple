@@ -27,5 +27,17 @@ namespace Command.Presentation.Controllers.v1
             }
             return BadRequest(result.Error);
         }
+
+        [MapToApiVersion(1)]
+        [HttpDelete("delete")]
+        public async Task<IActionResult> DeleteV1([FromBody] DeleteNotificationCommand request)
+        {
+            var result = await mediator.Send(request);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Error);
+        }
     }
 }

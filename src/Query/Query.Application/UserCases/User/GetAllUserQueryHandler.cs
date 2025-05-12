@@ -38,7 +38,17 @@ namespace Query.Application.UserCases.User
                 users = users.Where(user => request.StatusActiveds.Contains(user.IsActived));
             }
 
-            if(!string.IsNullOrWhiteSpace(request.SearchText))
+            if (request.StatusPermission is not null)
+            {
+                users = users.Where(user => request.StatusPermission.Contains(user.Role.RoleName));
+            }
+
+            if (request.StatusLoginGoogle is not null)
+            {
+                users = users.Where(user => request.StatusLoginGoogle.Contains(user.IsLoginWithGoogle));
+            }
+
+            if (!string.IsNullOrWhiteSpace(request.SearchText))
             {
                 users = users.Where(user => user.FullName.ToLower().Contains(request.SearchText.ToLower()));
             }

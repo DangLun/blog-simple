@@ -111,7 +111,7 @@ namespace Query.Application.UserCases.Post
                                 },
                                 Replieds = GetReplieds(y.c.Id, request.UserIdCall, post.Id)
                             }).ToList(),
-                PostRelates = postRelates.Where(pr => pr.UserId == post.User.Id && !pr.IsDeleted && pr.IsPublished).Take(5).Select(p => new PostRelateDTO
+                PostRelates = postRelates.Where(pr => pr.UserId == post.User.Id && !pr.IsDeleted && pr.IsPublished && pr.Id != post.Id).Take(5).Select(p => new PostRelateDTO
                 {
                     PostId = p.Id,
                     PostTitle = p.PostTitle,

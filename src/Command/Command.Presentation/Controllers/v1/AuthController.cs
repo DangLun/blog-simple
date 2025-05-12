@@ -3,6 +3,7 @@ using Command.Application.Command;
 using Command.Application.Commands.Auth;
 using Command.Application.DTOs.Auth.InputDTOs;
 using Command.Presentation.Abstractions;
+using Contract.Enumerations;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -130,6 +131,20 @@ namespace Command.Presentation.Controllers.v1
         [MapToApiVersion(1)]
         [Authorize]
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordCommand request)
+        {
+            var result = await mediator.Send(request);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        
+        [MapToApiVersion(1)]
+        [HttpPost("force-change-password")]
+        [Authorize(Roles =nameof(PermissionType.ADMIN))]
+        public async Task<IActionResult> ForceChangePassword([FromBody] ForceChangePasswordCommand request)
         {
             var result = await mediator.Send(request);
             if (result.IsSuccess)
