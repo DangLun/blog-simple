@@ -1,5 +1,6 @@
 ﻿using Contract.Shared;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Query.Application.DTOs.Statistical.OutputDTOs;
 using Query.Application.Query.Statistical;
 using Query.Domain.Abstractions.Repositories;
@@ -20,15 +21,15 @@ namespace Query.Application.UserCases.Statistical
 
             var posts = postRepo.FindAll(false, x => !x.IsDeleted);
             var users = userRepo.FindAll();
-            var totalUserLoginToday = users.Where(x => x.LastLoginAt == DateTime.Now).Count();
+            var totalUserLoginToday = await users.Where(x => x.LastLoginAt != null ? x.LastLoginAt.Value.Date == DateTime.Now.Date : false).CountAsync();
 
             var response = new GetTotalStatisticalResponseDTO
             {
-                TotalPost = posts.Count(),
-                TotalUser = users.Count(),
+                TotalPost = await posts.CountAsync(),
+                TotalUser = await users.CountAsync(),
                 TotalUserLoginToday = totalUserLoginToday
             };
-
+    
             return Result.Success(response);
         }
     }

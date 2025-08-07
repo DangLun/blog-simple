@@ -1,6 +1,5 @@
 ﻿using Asp.Versioning;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Query.Application.DTOs.Post.InputDTO;
@@ -76,6 +75,7 @@ namespace Query.Presentation.Controllers.v1
 
             return BadRequest(result.Error);
         }
+
         [MapToApiVersion(1)]
         [HttpGet("get-detail")]
         public async Task<IActionResult> GetDetailV1([FromQuery] GetDetailPostRequestDTO request)
@@ -95,7 +95,6 @@ namespace Query.Presentation.Controllers.v1
         }
         [MapToApiVersion(1)]
         [HttpGet("get-all-by-user-id")]
-        [Authorize]
         public async Task<IActionResult> GetAllPostByUserIdV1([FromQuery] GetAllPostByUserIdRequestDTO request)
         {
             var query = new GetAllPostByUserIdQuery
@@ -122,7 +121,6 @@ namespace Query.Presentation.Controllers.v1
 
         [MapToApiVersion(1)]
         [HttpGet("get-all-saved-by-user-id")]
-        [Authorize]
         public async Task<IActionResult> GetAllPostSavedByUserIdV1([FromQuery] GetAllPostSavedByUserIdRequestDTO request)
         {
             var query = new GetAllPostSavedByUserIdQuery

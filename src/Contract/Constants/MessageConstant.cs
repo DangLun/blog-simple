@@ -124,5 +124,10 @@ namespace System
         {
             return "Tài khoản của bạn đã bị tạm khóa!";
         }
+
+        public static string ForbiddenUpdatePost()
+        {
+            return "Bạn không có quyền chỉnh sửa bài viết!";
+        }
     }
 }

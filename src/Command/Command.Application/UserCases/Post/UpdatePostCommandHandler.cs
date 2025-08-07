@@ -3,6 +3,7 @@ using Command.Application.Commands.Post;
 using Command.Domain.Abstractions.Repositories;
 using Command.Domain.Entities;
 using Contract.Constants;
+using Contract.Enumerations;
 using Contract.Errors;
 using Contract.Shared;
 using FluentValidation;
@@ -37,7 +38,8 @@ namespace Command.Application.UserCases.Post
                 var postRepo = unitOfWork.Repository<Domain.Entities.Post, int>();
                 var userRepo = unitOfWork.Repository<Domain.Entities.User, int>();
                 var post = await postRepo.FindByIdAsync((int)request.PostId, true, cancellationToken, x => x.PostText, x=> x.PostTags);
-                var user = await userRepo.FindByIdAsync((int)request.UserIdCall, true, cancellationToken);
+                var user = await userRepo.FindByIdAsync((int)request.UserIdCall, true, cancellationToken, x => x.Role);
+
                 if(post == null)
                 {
                     var message = MessageConstant.NotFound<Domain.Entities.Post>(x => x.Id, request.PostId);
@@ -47,6 +49,15 @@ namespace Command.Application.UserCases.Post
                 if(user == null)
                 {
                     var message = MessageConstant.NotFound<Domain.Entities.User>(x => x.Id, request.UserIdCall);
+                    return Result.Failure(Error.NotFound(message));
+                }
+
+                bool isAdmin = user.Role.RoleName == nameof(PermissionType.ADMIN);
+                bool canUpdate = post.UserId == request.UserIdCall || isAdmin;
+
+                if(!canUpdate)
+                {
+                    var message = MessageConstant.ForbiddenUpdatePost();
                     return Result.Failure(Error.NotFound(message));
                 }
 

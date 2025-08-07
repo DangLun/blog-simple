@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\query\\query.application\\dtos\\statistical\\outputdtos\\gettotalstatisticalresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|solutionrelative:src\\query\\query.application\\dtos\\statistical\\outputdtos\\gettotalstatisticalresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\command\\command.application\\usercases\\post\\createpostcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|solutionrelative:src\\command\\command.application\\usercases\\post\\createpostcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\query\\query.application\\usercases\\statistical\\gettotalallstatisticalqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|solutionrelative:src\\query\\query.application\\usercases\\statistical\\gettotalallstatisticalqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\command\\command.application\\commands\\uploads\\fileuploadcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE8FEE94-4655-4B70-AABA-FB3846D128A1}|src\\Command\\Command.Application\\Command.Application.csproj|solutionrelative:src\\command\\command.application\\commands\\uploads\\fileuploadcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57B1BAAF-5FDF-4274-8EA9-CF01A07209A7}|src\\Query\\Query.Presentation\\Query.Presentation.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\query\\query.presentation\\controllers\\v1\\statisticalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57B1BAAF-5FDF-4274-8EA9-CF01A07209A7}|src\\Query\\Query.Presentation\\Query.Presentation.csproj|solutionrelative:src\\query\\query.presentation\\controllers\\v1\\statisticalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\query\\query.application\\usercases\\statistical\\gettotalpostedinrangetimequeryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|solutionrelative:src\\query\\query.application\\usercases\\statistical\\gettotalpostedinrangetimequeryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\query\\query.application\\query\\statistical\\gettotalpostedinrangetimequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D448B4FA-1BCB-450C-9FCD-3474C6E8EFCD}|src\\Query\\Query.Application\\Query.Application.csproj|solutionrelative:src\\query\\query.application\\query\\statistical\\gettotalpostedinrangetimequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E75634B6-9B08-4BCD-A03F-11932077E125}|src\\Command\\Command.Persistence\\Command.Persistence.csproj|c:\\study\\lean_university\\nam-4\\hk1\\thuctap\\blog-website\\backend\\blog-api\\src\\command\\command.persistence\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E75634B6-9B08-4BCD-A03F-11932077E125}|src\\Command\\Command.Persistence\\Command.Persistence.csproj|solutionrelative:src\\command\\command.persistence\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -71,66 +63,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GetTotalStatisticalResponseDTO.cs",
-              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\DTOs\\Statistical\\OutputDTOs\\GetTotalStatisticalResponseDTO.cs",
-              "RelativeDocumentMoniker": "src\\Query\\Query.Application\\DTOs\\Statistical\\OutputDTOs\\GetTotalStatisticalResponseDTO.cs",
-              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\DTOs\\Statistical\\OutputDTOs\\GetTotalStatisticalResponseDTO.cs",
-              "RelativeToolTip": "src\\Query\\Query.Application\\DTOs\\Statistical\\OutputDTOs\\GetTotalStatisticalResponseDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAAAAAAA",
+              "Title": "CreatePostCommandHandler.cs",
+              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\UserCases\\Post\\CreatePostCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\Command\\Command.Application\\UserCases\\Post\\CreatePostCommandHandler.cs",
+              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\UserCases\\Post\\CreatePostCommandHandler.cs",
+              "RelativeToolTip": "src\\Command\\Command.Application\\UserCases\\Post\\CreatePostCommandHandler.cs",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAiwGEAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T12:52:11.48Z",
+              "WhenOpened": "2025-07-29T17:45:06.699Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GetTotalAllStatisticalQueryHandler.cs",
-              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\UserCases\\Statistical\\GetTotalAllStatisticalQueryHandler.cs",
-              "RelativeDocumentMoniker": "src\\Query\\Query.Application\\UserCases\\Statistical\\GetTotalAllStatisticalQueryHandler.cs",
-              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\UserCases\\Statistical\\GetTotalAllStatisticalQueryHandler.cs",
-              "RelativeToolTip": "src\\Query\\Query.Application\\UserCases\\Statistical\\GetTotalAllStatisticalQueryHandler.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAA6wA8AAAA/AAAA",
+              "Title": "FileUploadCommand.cs",
+              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\Commands\\Uploads\\FileUploadCommand.cs",
+              "RelativeDocumentMoniker": "src\\Command\\Command.Application\\Commands\\Uploads\\FileUploadCommand.cs",
+              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Application\\Commands\\Uploads\\FileUploadCommand.cs",
+              "RelativeToolTip": "src\\Command\\Command.Application\\Commands\\Uploads\\FileUploadCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T12:48:24.515Z",
+              "WhenOpened": "2025-07-29T17:44:38.874Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "StatisticalController.cs",
-              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Presentation\\Controllers\\v1\\StatisticalController.cs",
-              "RelativeDocumentMoniker": "src\\Query\\Query.Presentation\\Controllers\\v1\\StatisticalController.cs",
-              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Presentation\\Controllers\\v1\\StatisticalController.cs",
-              "RelativeToolTip": "src\\Query\\Query.Presentation\\Controllers\\v1\\StatisticalController.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAkwCgAAAA2AAAA",
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Persistence\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "src\\Command\\Command.Persistence\\Repositories\\GenericRepository.cs",
+              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Command\\Command.Persistence\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "src\\Command\\Command.Persistence\\Repositories\\GenericRepository.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAmwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T12:36:49.653Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GetTotalPostedInRangeTimeQueryHandler.cs",
-              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\UserCases\\Statistical\\GetTotalPostedInRangeTimeQueryHandler.cs",
-              "RelativeDocumentMoniker": "src\\Query\\Query.Application\\UserCases\\Statistical\\GetTotalPostedInRangeTimeQueryHandler.cs",
-              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\UserCases\\Statistical\\GetTotalPostedInRangeTimeQueryHandler.cs",
-              "RelativeToolTip": "src\\Query\\Query.Application\\UserCases\\Statistical\\GetTotalPostedInRangeTimeQueryHandler.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAA4wCUAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T12:29:22.976Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GetTotalPostedInRangeTimeQuery.cs",
-              "DocumentMoniker": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\Query\\Statistical\\GetTotalPostedInRangeTimeQuery.cs",
-              "RelativeDocumentMoniker": "src\\Query\\Query.Application\\Query\\Statistical\\GetTotalPostedInRangeTimeQuery.cs",
-              "ToolTip": "C:\\Study\\Lean_University\\Nam-4\\HK1\\ThucTap\\blog-website\\backend\\blog-api\\src\\Query\\Query.Application\\Query\\Statistical\\GetTotalPostedInRangeTimeQuery.cs",
-              "RelativeToolTip": "src\\Query\\Query.Application\\Query\\Statistical\\GetTotalPostedInRangeTimeQuery.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T12:29:03.538Z",
+              "WhenOpened": "2025-07-29T17:43:15.719Z",
               "EditorCaption": ""
             }
           ]
@@ -142,6 +108,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
             }
           ]
         }
